@@ -12,11 +12,12 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
     public IActionResult Index()
     {
         return View();
     }
+
+    public IActionResult Katalog() => View();
 
     public IActionResult Privacy()
     {
