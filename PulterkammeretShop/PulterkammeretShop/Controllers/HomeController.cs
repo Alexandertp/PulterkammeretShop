@@ -14,6 +14,8 @@ public class HomeController : Controller
     }
     public IActionResult Index()
     {
+        Costumer bob = new Costumer();
+        bob.addToOrder(0, "Order1");
         return View();
     }
 

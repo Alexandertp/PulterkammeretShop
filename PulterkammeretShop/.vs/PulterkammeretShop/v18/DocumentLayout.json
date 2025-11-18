@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "PulterkammeretShop\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Controllers\\HomeController.cs",
               "RelativeToolTip": "PulterkammeretShop\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowA4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T11:51:54.871Z",
               "EditorCaption": ""
@@ -77,7 +77,7 @@
               "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Account.cs",
               "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Account.cs",
               "RelativeToolTip": "PulterkammeretShop\\Models\\Account.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T11:45:44.886Z",
               "EditorCaption": ""
@@ -85,26 +85,33 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Vare.cs",
-              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
-              "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Vare.cs",
-              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
-              "RelativeToolTip": "PulterkammeretShop\\Models\\Vare.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T11:18:33.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Costumer.cs",
               "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Costumer.cs",
               "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Costumer.cs",
               "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Costumer.cs",
               "RelativeToolTip": "PulterkammeretShop\\Models\\Costumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA4wBQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T11:18:16.486Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vare.cs",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Vare.cs",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
+              "RelativeToolTip": "PulterkammeretShop\\Models\\Vare.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T11:18:33.257Z",
               "EditorCaption": ""
             }
           ]

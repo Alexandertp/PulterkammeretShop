@@ -13,7 +13,12 @@
             int phoneNumber;
             string address;
             string paymentInfo;
-            List<Vare> = new List<Vare>();
+        }
+        List <Vare> Orders = new List<Vare>();
+
+        public void addToOrder(int id, string input)
+        {
+            Orders.Add(new Vare(id, input));
         }
     }
 }

@@ -7,10 +7,10 @@ public class Vare
     ///
     /// skrevet af Kasper Sørensen.
     /// </summary>
-    public Vare()
+    public Vare(int id, string name)
     {
-        int    id;
-        string name;
+        int ID = id;
+        string Name = name;
         double price;
         string description;
         int    players;
@@ -18,13 +18,5 @@ public class Vare
         string category;
         string publisher;
         string image;
-
     }
-
-
 }
-
-
-
-
-
