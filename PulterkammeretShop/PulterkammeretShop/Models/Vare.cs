@@ -11,11 +11,13 @@ public class Vare
     {
         int    id;
         string name;
-        double pris;
-        string beskrivelse;
-        int    antal;
-        string kategori;
-        string forlag;
+        double price;
+        string description;
+        int    players;
+        int    inventory;
+        string category;
+        string publisher;
+        string Image;
 
     }
 
