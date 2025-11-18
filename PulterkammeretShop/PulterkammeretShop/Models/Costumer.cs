@@ -1,6 +1,6 @@
 ﻿namespace PulterkammeretShop.Models
 {
-    public class Costumer : UserAccount
+    public class Costumer : Account
     {
         /// <summary>
         /// Skrevet af Oliver Frølund
@@ -9,11 +9,11 @@
         {
             int id;
             string name;
-            string address;
-            List<Vare> = new List<Vare>();
-            string paymentInfo;
             string password;
             int phoneNumber;
+            string address;
+            string paymentInfo;
+            List<Vare> = new List<Vare>();
         }
     }
 }

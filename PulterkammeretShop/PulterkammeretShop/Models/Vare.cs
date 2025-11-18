@@ -17,7 +17,7 @@ public class Vare
         int    inventory;
         string category;
         string publisher;
-        string Image;
+        string image;
 
     }
 

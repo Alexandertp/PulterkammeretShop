@@ -1,13 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\hejsa\\source\\repos\\PulterkammeretShop\\PulterkammeretShop\\",
+  "WorkspaceRootPath": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\hejsa\\source\\repos\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\costumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\hejsa\\source\\repos\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|c:\\users\\anne4\\documents\\github\\pulterkammeretshop\\pulterkammeretshop\\pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A2BF920-6353-441E-B2AA-C4BEF13E3DD2}|PulterkammeretShop\\PulterkammeretShop.csproj|solutionrelative:pulterkammeretshop\\models\\vare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,20 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Vare.cs",
-              "DocumentMoniker": "C:\\Users\\hejsa\\source\\repos\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
-              "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Vare.cs",
-              "ToolTip": "C:\\Users\\hejsa\\source\\repos\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
-              "RelativeToolTip": "PulterkammeretShop\\Models\\Vare.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAcAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "PulterkammeretShop\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T11:18:33.257Z",
+              "WhenOpened": "2025-11-18T11:51:54.871Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
             },
             {
               "$type": "Bookmark",
@@ -59,13 +95,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "bootstrap-grid.rtl.css.map",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "RelativeToolTip": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAD2gAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-18T11:53:08.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "bootstrap-grid.rtl.css",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+              "RelativeToolTip": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T11:53:08.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "bootstrap-grid.min.css.map",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "RelativeToolTip": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABLZAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-18T11:53:05.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "bootstrap-grid.min.css",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+              "RelativeToolTip": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T11:53:03.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "bootstrap-grid.css.map",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "RelativeToolTip": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA6iAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-18T11:52:57.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "bootstrap-grid.css",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+              "RelativeToolTip": "PulterkammeretShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-18T11:52:47.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserAccount.cs",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\UserAccount.cs",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\UserAccount.cs",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\UserAccount.cs",
+              "RelativeToolTip": "PulterkammeretShop\\Models\\UserAccount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T11:45:44.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Vare.cs",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
+              "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Vare.cs",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Vare.cs",
+              "RelativeToolTip": "PulterkammeretShop\\Models\\Vare.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T11:18:33.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Costumer.cs",
-              "DocumentMoniker": "C:\\Users\\hejsa\\source\\repos\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Costumer.cs",
+              "DocumentMoniker": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Costumer.cs",
               "RelativeDocumentMoniker": "PulterkammeretShop\\Models\\Costumer.cs",
-              "ToolTip": "C:\\Users\\hejsa\\source\\repos\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Costumer.cs",
+              "ToolTip": "C:\\Users\\anne4\\Documents\\GitHub\\PulterkammeretShop\\PulterkammeretShop\\PulterkammeretShop\\Models\\Costumer.cs",
               "RelativeToolTip": "PulterkammeretShop\\Models\\Costumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T11:18:16.486Z",
               "EditorCaption": ""
