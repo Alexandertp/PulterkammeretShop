@@ -14,11 +14,11 @@
             string address;
             string paymentInfo;
         }
-        List <Vare> Orders = new List<Vare>();
+        List <Spil> Orders = new List<Spil>();
 
         public void addToOrder(int id, string input)
         {
-            Orders.Add(new Vare(id, input));
+            Orders.Add(new Spil(1000, "Matador", 299));
         }
     }
 }
