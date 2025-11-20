@@ -1,0 +1,5 @@
+1000, Matador, 299
+1001, Monopoly, 349
+1002, Risk, 199
+1003, Cluedo, 249
+1004, Scrabble, 179
