@@ -14,11 +14,6 @@
             string address;
             string paymentInfo;
         }
-        List <Spil> Orders = new List<Spil>();
-
-        public void addToOrder(int id, string input)
-        {
-            Orders.Add(new Spil(1000, "Matador", 299));
-        }
+        List <Ordre> ordre = new List<Ordre>();
     }
 }
