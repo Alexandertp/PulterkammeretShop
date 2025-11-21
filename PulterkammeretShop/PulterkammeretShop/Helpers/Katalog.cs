@@ -13,7 +13,12 @@ namespace PulterkammeretShop.Models
                 return ListeMedAlleSpil;
             }
         }
-
+        /// <summary>
+        /// Reads a text file and separates out values
+        ///
+        /// By Anne-Sofie & Alexander
+        /// </summary>
+        /// <returns></returns>
         public List<Spil> HentSpilFraFil()
         {
 
