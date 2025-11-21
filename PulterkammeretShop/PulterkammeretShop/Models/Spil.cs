@@ -8,20 +8,18 @@ public class Spil
     public int id { get; set; }
     public string navn { get; set; }
     public double pris { get; set; }
+    public string kategori  { get; set; }
     
     /// <summary>
     /// Constructer for vores Vare klasse
     ///
     /// skrevet af Kasper Sørensen.
     /// </summary>
-    public Spil(int id, string navn, double pris)
+    public Spil(int id, string navn, double pris, string kategori)
     {
         this.id = id;
         this.navn = navn;
         this.pris = pris;
-    }
-    public string beskrivelse()
-    {
-        return "Spil ID: " + id + ", Navn: " + navn + ", Pris: " + pris;
+        this.kategori = kategori;
     }
 }

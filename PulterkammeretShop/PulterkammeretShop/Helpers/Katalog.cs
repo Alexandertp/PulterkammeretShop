@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PulterkammeretShop.Models;
 
 namespace PulterkammeretShop.Helpers
@@ -28,7 +29,8 @@ namespace PulterkammeretShop.Helpers
                 int newId = Convert.ToInt32(splitArr[0]);
                 string newNavn = splitArr[1];
                 double newPris = Convert.ToDouble(splitArr[2]);
-                produktListeTemp.Add(new Spil(newId, newNavn, newPris));
+                string newKategori = splitArr[3];
+                produktListeTemp.Add(new Spil(newId, newNavn, newPris, newKategori));
                 Debug.WriteLine(newNavn + " " + newPris + " " + newId);
             }
             return produktListeTemp;
@@ -42,10 +44,23 @@ namespace PulterkammeretShop.Helpers
         public void AddSpil(Spil spil)
         {
             StreamWriter skriver = System.IO.File.AppendText(katalogPath);
-            skriver.WriteLine($"{spil.id},{spil.navn},{spil.pris}");
+            skriver.WriteLine($"{spil.id},{spil.navn},{spil.pris},{spil.kategori}");
             skriver.Close();
 
             ListeMedAlleSpil.Add(spil);
+        }
+
+        public List<Spil> Search(string SpilNavn, string? SpilKategori)
+        {
+            List<Spil> Bingbong =  new List<Spil>();
+            foreach (Spil spil in ListeMedAlleSpil)
+            {
+                if (spil.navn == SpilNavn)
+                {
+                    Bingbong.Add(spil);
+                }
+            }
+            return Bingbong;
         }
     }
 }
