@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PulterkammeretShop.Models;
-
+using PulterkammeretShop.Helpers;
 namespace PulterkammeretShop.Controllers;
 
 public class HomeController : Controller
@@ -12,9 +12,10 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
+    //Program starts here :)
     public IActionResult Index()
     {
-        
+        Katalog katalog = new Katalog();
         return View();
     }
 

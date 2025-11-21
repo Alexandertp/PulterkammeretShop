@@ -1,4 +1,6 @@
-﻿namespace PulterkammeretShop.Models
+﻿using PulterkammeretShop.Helpers;
+
+namespace PulterkammeretShop.Models
 {
     public class Pulterkammeret
     {

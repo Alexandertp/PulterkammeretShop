@@ -1,29 +1,26 @@
 ﻿using System.Diagnostics;
+using PulterkammeretShop.Models;
 
-namespace PulterkammeretShop.Models
+namespace PulterkammeretShop.Helpers
 {
     public class Katalog
     {
+        private const string katalogPath = "SpilKatalog.txt";
         private List<Spil> ListeMedAlleSpil = new List<Spil>();
+
         public Katalog()
         {
             ListeMedAlleSpil = HentSpilFraFil();
-            List<Spil> VisAlleSpil()
-            {
-                return ListeMedAlleSpil;
-            }
         }
+
         /// <summary>
         /// Reads a text file and separates out values
         ///
         /// By Anne-Sofie & Alexander
         /// </summary>
-        /// <returns></returns>
         public List<Spil> HentSpilFraFil()
         {
-
-            int i = 0;
-            string[] importTekst = System.IO.File.ReadAllLines(@"SpilKatalog.txt"); 
+            string[] importTekst = System.IO.File.ReadAllLines(katalogPath); 
             List<Spil> produktListeTemp = new List<Spil>();
             foreach (string spil in importTekst)
             {
@@ -32,8 +29,23 @@ namespace PulterkammeretShop.Models
                 string newNavn = splitArr[1];
                 double newPris = Convert.ToDouble(splitArr[2]);
                 produktListeTemp.Add(new Spil(newId, newNavn, newPris));
+                Debug.WriteLine(newNavn + " " + newPris + " " + newId);
             }
-            return  produktListeTemp;
+            return produktListeTemp;
+        }
+
+        /// <summary>
+        /// Takes a Spil object and appends it to the Katalog File :DDD
+        ///
+        /// By Alexander
+        /// </summary>
+        public void AddSpil(Spil spil)
+        {
+            StreamWriter skriver = System.IO.File.AppendText(katalogPath);
+            skriver.WriteLine($"{spil.id},{spil.navn},{spil.pris}");
+            skriver.Close();
+
+            ListeMedAlleSpil.Add(spil);
         }
     }
 }
