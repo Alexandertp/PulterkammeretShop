@@ -7,19 +7,28 @@ namespace PulterkammeretShop.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
+    private Katalog katalog;
+    private static List<int> indkøbsKurv;
     public HomeController(ILogger<HomeController> logger)
     {
+        if (indkøbsKurv == null)
+        {
+            indkøbsKurv = new List<int>();
+        }
         _logger = logger;
     }
     //Program starts here :)
     public IActionResult Index()
     {
+        if (katalog == null)
+        {
+            katalog = new Katalog();
+        }
         return View();
     }
-
     public IActionResult Katalog()
     {
+        
         Katalog katalog = new Katalog();
         List<Spil> SpilListe = katalog.HentSpilFraFil();
         return View(SpilListe);
@@ -28,7 +37,9 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult BuyItem(int spilId)
     {
-        return Ok();
+        indkøbsKurv.Add(spilId);
+        Debug.WriteLine(indkøbsKurv.Count); 
+        return Redirect(@"Katalog");
     }
 
     public IActionResult Privacy()

@@ -31,7 +31,6 @@ namespace PulterkammeretShop.Helpers
                 double newPris = Convert.ToDouble(splitArr[2]);
                 string newKategori = splitArr[3];
                 produktListeTemp.Add(new Spil(newId, newNavn, newPris, newKategori));
-                Debug.WriteLine(newNavn + " " + newPris + " " + newId);
             }
             return produktListeTemp;
         }
