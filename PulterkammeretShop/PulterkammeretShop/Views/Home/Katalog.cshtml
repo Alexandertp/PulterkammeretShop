@@ -1,16 +1,22 @@
 @{
-    Layout = null;
+    ViewData["Title"] = "Katalog";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Pulterkammeret - Spilliste</title>
-</head>
-<body>
+@model List<Spil>
 <div>
-      Her vises alle brætspil (Når vi laver dem høhø)
+    @foreach (Spil spil in Model)
+    {
+        <span>@spil.id</span>
+        <span>@spil.navn</span>
+        <span>@spil.pris</span>
+        <span>@spil.kategori</span>
+        <form method="POST" asp-action="BuyItem">
+            <input type="hidden" name="spilId" value="@spil.id">
+            <button>Buy now</button>
+        </form>
+        <br>
+    }
 </div>
-</body>
-</html>
+<div>
+    mega div mand.
+    Her vises alle brætspil (Når vi laver dem høhø)
+</div>

@@ -1,5 +1,5 @@
-1000, Matador, 299
-1001, Monopoly, 349
-1002, Risk, 199
-1003, Cluedo, 249
-1004, Scrabble, 179
+1000,Matador,299,trash
+1001,Monopoly,349,trash
+1002,Risk,199,strategi
+1003,Cluedo,249,trivia
+1004,Scrabble,179,ordspil

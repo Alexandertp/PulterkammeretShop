@@ -15,11 +15,21 @@ public class HomeController : Controller
     //Program starts here :)
     public IActionResult Index()
     {
-        Katalog katalog = new Katalog();
         return View();
     }
 
-    public IActionResult Katalog() => View();
+    public IActionResult Katalog()
+    {
+        Katalog katalog = new Katalog();
+        List<Spil> SpilListe = katalog.HentSpilFraFil();
+        return View(SpilListe);
+    }
+
+    [HttpPost]
+    public IActionResult BuyItem(int spilId)
+    {
+        return Ok();
+    }
 
     public IActionResult Privacy()
     {
