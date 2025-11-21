@@ -7,31 +7,28 @@ namespace PulterkammeretShop.Models
         private List<Spil> ListeMedAlleSpil = new List<Spil>();
         public Katalog()
         {
+            ListeMedAlleSpil = HentSpilFraFil();
             List<Spil> VisAlleSpil()
             {
                 return ListeMedAlleSpil;
             }
         }
 
-        public void HentSpilFraFil()
+        public List<Spil> HentSpilFraFil()
         {
 
             int i = 0;
-            string[] importTekst = System.IO.File.ReadAllLines(@"SpilKatalog.txt");
-            Spil[] produktListeTemp = new Spil[importTekst.Length];
+            string[] importTekst = System.IO.File.ReadAllLines(@"SpilKatalog.txt"); 
+            List<Spil> produktListeTemp = new List<Spil>();
             foreach (string spil in importTekst)
             {
                 string[] splitArr = spil.Split(',');
                 int newId = Convert.ToInt32(splitArr[0]);
                 string newNavn = splitArr[1];
                 double newPris = Convert.ToDouble(splitArr[2]);
-                produktListeTemp[i] = new Spil(newId, newNavn, newPris);
-                ListeMedAlleSpil.Add(produktListeTemp[i]);
+                produktListeTemp.Add(new Spil(newId, newNavn, newPris));
             }
-            foreach (Spil item in ListeMedAlleSpil)
-            {
-                Debug.WriteLine(item.beskrivelse());
-            }
+            return  produktListeTemp;
         }
     }
 }
