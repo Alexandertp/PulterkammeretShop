@@ -1,4 +1,6 @@
-﻿namespace PulterkammeretShop.Models
+﻿using System.Diagnostics;
+
+namespace PulterkammeretShop.Models
 {
     public class Katalog
     {
@@ -10,9 +12,11 @@
                 return ListeMedAlleSpil;
             }
         }
-        int i = 0;
+
         public void HentSpilFraFil()
         {
+
+            int i = 0;
             string[] importTekst = System.IO.File.ReadAllLines(@"SpilKatalog.txt");
             Spil[] produktListeTemp = new Spil[importTekst.Length];
             foreach (string spil in importTekst)
@@ -26,8 +30,7 @@
             }
             foreach (Spil item in ListeMedAlleSpil)
             {
-                Console.WriteLine(item.beskrivelse());
-                Console.WriteLine();
+                Debug.WriteLine(item.beskrivelse());
             }
         }
     }
