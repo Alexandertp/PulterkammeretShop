@@ -6,12 +6,18 @@
 <div class="text-center">
     @if (Model != null)
     {
-       
+        double totalPris = 0;
         @foreach (Spil spil in Model)
         {
+            totalPris += spil.pris;
+            
             <div>
                 @spil.navn
+                <hr/>
             </div>
         }   
+        <div>
+            Fuld pris: @totalPris kr
+        </div>
     }
 </div>
