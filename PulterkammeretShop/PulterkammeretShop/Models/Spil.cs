@@ -10,6 +10,8 @@ public class Spil
     public double pris { get; set; }
     public string kategori  { get; set; }
     
+    public int antal { get; set; }
+    
     /// <summary>
     /// Constructer for vores Vare klasse
     ///
