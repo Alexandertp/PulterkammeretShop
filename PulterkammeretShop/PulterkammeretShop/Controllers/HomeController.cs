@@ -45,7 +45,20 @@ public class HomeController : Controller
     {
         katalog = new Katalog();
         List<Spil> SpilListe = katalog.HentSpilFraFil();
-        indkøbsKurv.Add(SpilListe.First(spil => spil.id == spilId));
+        if (indkøbsKurv.Exists(spil => spil.id == spilId))
+        {
+            foreach (Spil spil in indkøbsKurv)
+            {
+                if (spil.id == spilId)
+                {
+                    spil.antal++;
+                }
+            }
+        }
+        else
+        {
+            indkøbsKurv.Add(SpilListe.First(spil => spil.id == spilId));
+        }
         Debug.WriteLine(indkøbsKurv.Count); 
         return Redirect(@"Katalog");
     }

@@ -23,5 +23,6 @@ public class Spil
         this.navn = navn;
         this.pris = pris;
         this.kategori = kategori;
+        this.antal = 0;
     }
 }
