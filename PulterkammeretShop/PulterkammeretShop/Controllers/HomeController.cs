@@ -8,12 +8,12 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private Katalog katalog;
-    private static List<int> indkøbsKurv;
+    private static List<Spil> indkøbsKurv;
     public HomeController(ILogger<HomeController> logger)
     {
         if (indkøbsKurv == null)
         {
-            indkøbsKurv = new List<int>();
+            indkøbsKurv = new List<Spil>();
         }
         _logger = logger;
     }
@@ -34,10 +34,18 @@ public class HomeController : Controller
         return View(SpilListe);
     }
 
+    public IActionResult Checkout()
+    {
+        
+        return View();
+    }
+
     [HttpPost]
     public IActionResult BuyItem(int spilId)
     {
-        indkøbsKurv.Add(spilId);
+        katalog = new Katalog();
+        List<Spil> SpilListe = katalog.HentSpilFraFil();
+        indkøbsKurv.Add(SpilListe.First(spil => spil.id == spilId));
         Debug.WriteLine(indkøbsKurv.Count); 
         return Redirect(@"Katalog");
     }
