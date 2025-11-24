@@ -12,7 +12,7 @@ public class Spil
     public int antal { get; set; }
     
     /// <summary>
-    /// Constructer for vores Vare klasse
+    /// Constructer for vores Spil klasse
     ///
     /// skrevet af Kasper Sørensen.
     /// </summary>

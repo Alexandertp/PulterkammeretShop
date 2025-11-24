@@ -5,8 +5,8 @@
 <h1>Tilføj et spil til lageret</h1>
 <h4>Hvis du tør</h4>
 <form method="POST" asp-action="AddToLager">
-    <input type="text" name="spilNavn" aria-label="Navn"></input>
-    <input type="number" name="spilPris" aria-label="Pris"></input>
-    <input type="text" name="spilKategori" aria-label="Kategori"></input>
+    <span>Navn</span> <input type="text" name="spilNavn" aria-label="Navn"></input>
+    <span>Pris</span> <input type="number" name="spilPris" aria-label="Pris"></input>
+    <span>Kategori</span> <input type="text" name="spilKategori" aria-label="Kategori"></input>
     <button>Tilføj spil</button>
 </form>
