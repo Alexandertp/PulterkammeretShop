@@ -40,6 +40,19 @@ public class HomeController : Controller
         return View(indkøbsKurv);
     }
 
+    public IActionResult Lager()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult AddToLager(string spilNavn, double spilPris)
+    {
+        Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count,spilNavn, spilPris, "ingen");
+        katalog.AddSpil(nytSpilTilLager);
+        return Redirect("Lager");
+    }
+    
     [HttpPost]
     public IActionResult BuyItem(int spilId)
     {
@@ -62,7 +75,7 @@ public class HomeController : Controller
         Debug.WriteLine(indkøbsKurv.Count); 
         return Redirect(@"Katalog");
     }
-
+    
     public IActionResult Privacy()
     {
         return View();

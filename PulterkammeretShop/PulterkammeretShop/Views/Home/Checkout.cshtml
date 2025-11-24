@@ -9,10 +9,10 @@
         double totalPris = 0;
         @foreach (Spil spil in Model)
         {
-            totalPris += spil.pris;
+            totalPris += spil.pris * spil.antal;
             
             <div>
-                @spil.navn
+                @spil.navn @spil.antal
                 <hr/>
             </div>
         }

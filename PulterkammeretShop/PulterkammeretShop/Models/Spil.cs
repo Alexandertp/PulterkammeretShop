@@ -9,7 +9,6 @@ public class Spil
     public string navn { get; set; }
     public double pris { get; set; }
     public string kategori  { get; set; }
-    
     public int antal { get; set; }
     
     /// <summary>
@@ -23,6 +22,6 @@ public class Spil
         this.navn = navn;
         this.pris = pris;
         this.kategori = kategori;
-        this.antal = 0;
+        this.antal = 1;
     }
 }
