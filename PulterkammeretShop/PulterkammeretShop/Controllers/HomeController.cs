@@ -46,9 +46,10 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult AddToLager(string spilNavn, double spilPris)
+    public IActionResult AddToLager(string spilNavn, double spilPris, string spilKategori)
     {
-        Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count,spilNavn, spilPris, "ingen");
+        Katalog katalog = new Katalog();
+        Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count,spilNavn, spilPris, spilKategori);
         katalog.AddSpil(nytSpilTilLager);
         return Redirect("Lager");
     }

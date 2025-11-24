@@ -1,4 +1,4 @@
-1000,Matador,299,trash
+0,Matador,299,trash
 1001,Monopoly,349,trash
 1002,Risk,199,strategi
 1003,Cluedo,249,trivia

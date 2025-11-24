@@ -43,7 +43,8 @@ namespace PulterkammeretShop.Helpers
         public void AddSpil(Spil spil)
         {
             StreamWriter skriver = System.IO.File.AppendText(katalogPath);
-            skriver.WriteLine($"{spil.id},{spil.navn},{spil.pris},{spil.kategori}");
+            skriver.WriteLine();
+            skriver.Write($"{spil.id},{spil.navn},{spil.pris},{spil.kategori}");
             skriver.Close();
 
             ListeMedAlleSpil.Add(spil);
