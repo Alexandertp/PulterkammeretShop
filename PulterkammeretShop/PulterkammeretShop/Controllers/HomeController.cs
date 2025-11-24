@@ -37,7 +37,7 @@ public class HomeController : Controller
     public IActionResult Checkout()
     {
         
-        return View();
+        return View(indkøbsKurv);
     }
 
     [HttpPost]
