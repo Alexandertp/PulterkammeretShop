@@ -41,6 +41,27 @@ public class HomeController : Controller
         return View(indkøbsKurv);
     }
 
+    public IActionResult LogCustomer(string customerUserName, string customerPassword, int customerPhoneNumber, string customerAddress, string customerPaymentMethod)
+    {
+        bool isCustomerInSystem = false;
+        AccountHelper accountHelper = new AccountHelper();
+        foreach (Customer customer in accountHelper.listeMedAlleCostumers)
+        {
+            if (customerUserName == customer.name && customerPassword == customer.password &&
+                customerPhoneNumber == customer.PhoneNumber && customerAddress == customer.Address &&
+                customerPaymentMethod == customer.PaymentInfo)
+            {
+                isCustomerInSystem = true;
+            }
+        }
+
+        if (isCustomerInSystem)
+        {
+            
+        }
+        return Redirect("Checkout");
+    }
+
     public IActionResult Lager()
     {
         return View();
