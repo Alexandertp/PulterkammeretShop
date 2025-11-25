@@ -58,7 +58,7 @@ namespace PulterkammeretShop.Helpers
 
         public void AddOrderToCustomerDirectory(Customer customer, List<Spil> bestilling)
         {
-            string bestillingFolder = "Bestillinger/" + customer.id.ToString();
+            string bestillingFolder = "Bestillinger/" + customer.id.ToString() + "/";
             if (!Directory.Exists(bestillingFolder))
             {
                 Directory.CreateDirectory(bestillingFolder);
@@ -68,6 +68,7 @@ namespace PulterkammeretShop.Helpers
             {
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
             }
+            skriver.Close();
         }
     }
 }
