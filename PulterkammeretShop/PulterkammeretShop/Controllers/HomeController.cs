@@ -9,6 +9,7 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private Katalog katalog;
     private static List<Spil> indkøbsKurv;
+    public static bool EmployeeLoggedIn = false;
     public HomeController(ILogger<HomeController> logger)
     {
         if (indkøbsKurv == null)
@@ -52,6 +53,20 @@ public class HomeController : Controller
         Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count,spilNavn, spilPris, spilKategori);
         katalog.AddSpil(nytSpilTilLager);
         return Redirect("Lager");
+    }
+
+    public IActionResult LoginEmployee(string employeeUserName, string employeePassword)
+    {
+        AccountHelper accountHelper = new AccountHelper();
+        foreach (Employee employee in accountHelper.listeMedAlleEmployees)
+        {
+            if (employeePassword == employee.password && employeeUserName == employee.name)
+            {
+                EmployeeLoggedIn = true;
+            }
+        }
+        Debug.WriteLine("Employee Login er " + EmployeeLoggedIn);
+        return Redirect($"Lager");
     }
     
     [HttpPost]

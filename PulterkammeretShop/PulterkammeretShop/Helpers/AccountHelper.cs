@@ -3,12 +3,20 @@
 namespace PulterkammeretShop.Helpers
 {
     /// <summary>
-    /// Skrevet af Kaser, Oliver, WooHooWizard
+    /// Skrevet af Kasper, Oliver, Anne Sofie
     /// </summary>
     public class AccountHelper
     {
         private List<Employee> ListeMedAlleEmployees = new List<Employee>();
         private List<Customer> ListeMedAlleCostumers = new List<Customer>();
+        public List<Employee> listeMedAlleEmployees 
+        {
+            get { return ListeMedAlleEmployees; }
+        }
+        public List<Customer> listeMedAlleCostumers
+        {
+            get { return ListeMedAlleCostumers; }
+        }
         public AccountHelper()
         {
             ListeMedAlleEmployees = GetEmployees();

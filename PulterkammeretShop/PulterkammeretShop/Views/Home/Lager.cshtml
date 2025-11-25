@@ -1,12 +1,23 @@
+@using PulterkammeretShop.Controllers
 @{
     ViewData["Title"] = "Lager";
 }
 
-<h1>Tilføj et spil til lageret</h1>
-<h4>Hvis du tør</h4>
-<form method="POST" asp-action="AddToLager">
-    <span>Navn</span> <input type="text" name="spilNavn" aria-label="Navn"></input>
-    <span>Pris</span> <input type="number" name="spilPris" aria-label="Pris"></input>
-    <span>Kategori</span> <input type="text" name="spilKategori" aria-label="Kategori"></input>
-    <button>Tilføj spil</button>
-</form>
+@if (!HomeController.EmployeeLoggedIn)
+{
+    <form method="POST" asp-action="LoginEmployee">
+        <span>Brugernavn:</span> <input type="text" name="employeeUserName" aria-label="Brugernavn"></input>
+        <span>Adgangskode:</span> <input type="text" name="employeePassword" aria-label="Adgangskode"></input>
+        <button>Log in</button>
+    </form>
+}
+else
+{
+    <h1>Tilføj et spil til lageret</h1>
+    <form method="POST" asp-action="AddToLager">
+        <span>Navn:</span> <input type="text" name="spilNavn" aria-label="Navn"></input>
+        <span>Pris:</span> <input type="number" name="spilPris" aria-label="Pris"></input>
+        <span>Kategori:</span> <input type="text" name="spilKategori" aria-label="Kategori"></input>
+        <button>Tilføj spil</button>
+    </form>
+}
