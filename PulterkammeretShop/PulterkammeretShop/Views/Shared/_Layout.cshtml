@@ -13,7 +13,12 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PulterkammeretShop</a>
+            
+            <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/images/HeaderLogo.png" alt="Pulterkammeret Logo" style="height:40px; width:auto; margin-right:10px;"/>
+                <span>PulterkammeretShop</span>
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,13 +32,13 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>
                     <li>
-                        <a class ="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Katalog">Katalog</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Katalog">Katalog</a>
                     </li>
                     <li>
-                        <a class ="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Checkout">Indkøbskurv</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Checkout">Indkøbskurv</a>
                     </li>
                     <li>
-                        <a class ="nav-link dark text-dark" asp-area="" asp-controller="Home" asp-action="Lager">Lager</a>
+                        <a class="nav-link dark text-dark" asp-area="" asp-controller="Home" asp-action="Lager">Lager</a>
                     </li>
                 </ul>
             </div>
