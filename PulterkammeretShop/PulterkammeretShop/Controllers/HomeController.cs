@@ -44,14 +44,19 @@ public class HomeController : Controller
     public IActionResult LogCustomer(string customerUserName, string customerPassword, int customerPhoneNumber, string customerAddress, string customerPaymentMethod)
     {
         bool isCustomerInSystem = false;
+        Debug.WriteLine("Starter bestilling");
+        Customer inputCustomer = new Customer(null, customerUserName, customerPassword,  customerPhoneNumber, customerAddress, customerPaymentMethod);
         AccountHelper accountHelper = new AccountHelper();
-        foreach (Customer customer in accountHelper.listeMedAlleCostumers)
+        Debug.WriteLine(accountHelper.listeMedAlleCustomers.Count);
+        foreach (Customer customer in accountHelper.listeMedAlleCustomers)
         {
+            Debug.WriteLine(customer.name + " " + inputCustomer.name);
             if (customerUserName == customer.name && customerPassword == customer.password &&
                 customerPhoneNumber == customer.PhoneNumber && customerAddress == customer.Address &&
                 customerPaymentMethod == customer.PaymentInfo)
             {
-                isCustomerInSystem = true;
+                accountHelper.AddOrderToCustomerDirectory(customer, indkøbsKurv);
+                Debug.WriteLine(customer.name + " " + indkøbsKurv.Count);
             }
         }
 
@@ -109,7 +114,6 @@ public class HomeController : Controller
         {
             indkøbsKurv.Add(SpilListe.First(spil => spil.id == spilId));
         }
-        Debug.WriteLine(indkøbsKurv.Count); 
         return Redirect(@"Katalog");
     }
     

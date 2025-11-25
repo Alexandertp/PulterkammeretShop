@@ -1,4 +1,5 @@
-﻿using PulterkammeretShop.Models;
+﻿using System.Diagnostics;
+using PulterkammeretShop.Models;
 
 namespace PulterkammeretShop.Helpers
 {
@@ -8,19 +9,19 @@ namespace PulterkammeretShop.Helpers
     public class AccountHelper
     {
         private List<Employee> ListeMedAlleEmployees = new List<Employee>();
-        private List<Customer> ListeMedAlleCostumers = new List<Customer>();
+        private List<Customer> ListeMedAlleCustomers = new List<Customer>();
         public List<Employee> listeMedAlleEmployees 
         {
             get { return ListeMedAlleEmployees; }
         }
-        public List<Customer> listeMedAlleCostumers
+        public List<Customer> listeMedAlleCustomers
         {
-            get { return ListeMedAlleCostumers; }
+            get { return ListeMedAlleCustomers; }
         }
         public AccountHelper()
         {
             ListeMedAlleEmployees = GetEmployees();
-            ListeMedAlleCostumers = GetCustomers();
+            ListeMedAlleCustomers = GetCustomers();
         }
         public List<Employee> GetEmployees()
         {
@@ -70,5 +71,3 @@ namespace PulterkammeretShop.Helpers
         }
     }
 }
-
-

@@ -11,9 +11,16 @@ namespace PulterkammeretShop.Models
         /// <summary>
         /// Skrevet af Oliver Frølund
         /// </summary>
-        public Customer(int Id, string Name, string Password, int PhoneNumber, string Address, string PaymentInfo)
+        public Customer(int? Id, string Name, string Password, int PhoneNumber, string Address, string PaymentInfo)
         {
-            int id = Id;
+            if (Id == null)
+            {
+                Id = 1;
+            }
+            else
+            {
+                int id = (int)Id;
+            }
             string name = Name;
             string password = Password;
             int phoneNumber = PhoneNumber;
