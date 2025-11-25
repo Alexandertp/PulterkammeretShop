@@ -21,3 +21,18 @@
         </div>
     }
 </div>
+
+<form method="POST" asp-action="LogCustomer">
+    <span>Brugernavn: </span><input type="text" name="customerUserName" aria-label="Brugernavn" required="true"/><br>
+    <span>Adgangskode: </span><input type="text" name="customerPassword" arial-label="Adgangskode" required="true"/><br/>
+    <span>Mobilnummer: </span><input type="number" name="customerPhoneNumber" arial-label="Mobilnummer" required="true"/><br/>
+    <span>Adresse: </span><input type="text" name="customerAddress" arial-label="Adresse" required="true"/><br/>
+    <span>Betalingsmetode: </span><select name="customerPaymentMethod">
+        <option>Mastercard</option>
+        <option>Dankort</option>
+        <option>MobilePay</option>
+        <option>PayPal</option>
+    </select>
+    <button>Køb nu, lige nu, med det samme, eller jeg slagter dig</button>
+    
+</form>
