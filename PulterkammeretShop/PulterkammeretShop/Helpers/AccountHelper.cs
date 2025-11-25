@@ -54,6 +54,20 @@ namespace PulterkammeretShop.Helpers
             }
             return customerListeTemp;
         }
+
+        public void AddOrderToCustomerDirectory(Customer customer, List<Spil> bestilling)
+        {
+            string bestillingFolder = "Bestillinger/" + customer.id.ToString();
+            if (!Directory.Exists(bestillingFolder))
+            {
+                Directory.CreateDirectory(bestillingFolder);
+            }
+            StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length + ".txt");
+            foreach (Spil spil in bestilling)
+            {
+                skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
+            }
+        }
     }
 }
 
