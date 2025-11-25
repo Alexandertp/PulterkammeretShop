@@ -8,11 +8,11 @@ namespace PulterkammeretShop.Helpers
     public class AccountHelper
     {
         private List<Employee> ListeMedAlleEmployees = new List<Employee>();
-        private List<Costumer> ListeMedAlleCostumers = new List<Costumer>();
+        private List<Customer> ListeMedAlleCostumers = new List<Customer>();
         public AccountHelper()
         {
             ListeMedAlleEmployees = GetEmployees();
-            ListeMedAlleCostumers = GetCostumers();
+            ListeMedAlleCostumers = GetCustomers();
         }
         public List<Employee> GetEmployees()
         {
@@ -29,22 +29,22 @@ namespace PulterkammeretShop.Helpers
             }
             return employeeListeTemp;
         }
-        public List<Costumer> GetCostumers()
+        public List<Customer> GetCustomers()
         {
-            string[] importTekst = System.IO.File.ReadAllLines("Costumers.txt");
-            List<Costumer> costumerListeTemp = new List<Costumer>();
-            foreach (string costumer in importTekst)
+            string[] importTekst = System.IO.File.ReadAllLines("Customers.txt");
+            List<Customer> customerListeTemp = new List<Customer>();
+            foreach (string customer in importTekst)
             {
-                string[] splitArr = costumer.Split(",");
+                string[] splitArr = customer.Split(",");
                 int newId = Convert.ToInt32(splitArr[0]);
                 string newName = splitArr[1];
                 string newPassword = splitArr[2];
                 int newPhoneNumber = Convert.ToInt32(splitArr[3]);
                 string newAddress = splitArr[4];
                 string newPayment = splitArr[5];
-                costumerListeTemp.Add(new Costumer(newId, newName, newPassword, newPhoneNumber, newAddress, newPayment));
+                customerListeTemp.Add(new Customer(newId, newName, newPassword, newPhoneNumber, newAddress, newPayment));
             }
-            return costumerListeTemp;
+            return customerListeTemp;
         }
     }
 }

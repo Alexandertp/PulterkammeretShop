@@ -2,12 +2,12 @@
 
 namespace PulterkammeretShop.Models
 {
-    public class Costumer : Account
+    public class Customer : Account
     {
         /// <summary>
         /// Skrevet af Oliver Frølund
         /// </summary>
-        public Costumer(int Id, string Name, string Password, int PhoneNumber, string Address, string PaymentInfo)
+        public Customer(int Id, string Name, string Password, int PhoneNumber, string Address, string PaymentInfo)
         {
             int id;
             string name;

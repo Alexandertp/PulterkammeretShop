@@ -3,3 +3,4 @@
 1002,Risk,199,strategi
 1003,Cluedo,249,trivia
 1004,Scrabble,179,ordspil
+5,Terraforming Mars,350,Strategi
