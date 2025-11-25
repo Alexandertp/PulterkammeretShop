@@ -4,9 +4,9 @@ namespace PulterkammeretShop.Models
 {
     public class Customer : Account
     {
-        public int PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public string PaymentInfo { get; set; }
+        public int phoneNumber { get; set; }
+        public string address { get; set; }
+        public string paymentInfo { get; set; }
 
         /// <summary>
         /// Skrevet af Oliver Frølund
@@ -15,17 +15,17 @@ namespace PulterkammeretShop.Models
         {
             if (Id == null)
             {
-                Id = 1;
+                id = 1;
             }
             else
             {
-                int id = (int)Id;
+                id = (int)Id;
             }
-            string name = Name;
-            string password = Password;
-            int phoneNumber = PhoneNumber;
-            string address = Address;
-            string paymentInfo = PaymentInfo;
+            name = Name;
+            password = Password;
+            phoneNumber = PhoneNumber;
+            address = Address;
+            paymentInfo = PaymentInfo;
         }
         List <Ordre> ordre = new List<Ordre>();
     }

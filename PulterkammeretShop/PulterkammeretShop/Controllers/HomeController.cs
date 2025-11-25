@@ -52,8 +52,8 @@ public class HomeController : Controller
         {
             Debug.WriteLine(customer.name + " " + inputCustomer.name);
             if (customerUserName == customer.name && customerPassword == customer.password &&
-                customerPhoneNumber == customer.PhoneNumber && customerAddress == customer.Address &&
-                customerPaymentMethod == customer.PaymentInfo)
+                customerPhoneNumber == customer.phoneNumber && customerAddress == customer.address &&
+                customerPaymentMethod == customer.paymentInfo)
             {
                 accountHelper.AddOrderToCustomerDirectory(customer, indkøbsKurv);
                 Debug.WriteLine(customer.name + " " + indkøbsKurv.Count);
