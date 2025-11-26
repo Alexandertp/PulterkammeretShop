@@ -8,7 +8,7 @@ public class Ordre
         set {totalPris = value;}
     }
     public string ordreDato = "";
-    Ordre()
+    public Ordre()
     {
         ordreDato = DateTime.Now.ToShortDateString();
     }
