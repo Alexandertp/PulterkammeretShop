@@ -48,37 +48,27 @@
 
 
 <div class="column">
-<h2 style="font-weight: bold;">Dine oplysninger</h2>
-<form method="POST" asp-action="LogCustomer">
-    <h6 style="font-weight: bold">Brugernavn</h6>
-    <p>
-        <input type="text" name="customerUserName" required="true"
-               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
-    <h6 style="font-weight: bold">Adgangskode</h6>
-    <p>
-        <input type="text" name="customerPassword" required="true"
-               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
-    <h6 style="font-weight: bold">Mobilnummer</h6>
-    <p>
-        <input type="number" name="customerPhoneNumber" required="true"
-               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
-    <h6 style="font-weight: bold">Adresse</h6>
-    <p>
-        <input type="text" name="customerAddress" required="true"
-               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
-    <h6 style="font-weight: bold">Betalingsmetode</h6>
-    <select name="customerPaymentMethod" required="true"
-            style="width:250px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;">
-        <option>Mastercard</option>
-        <option>Dankort</option>
-        <option>MobilePay</option>
-        <option>PayPal</option>
-    </select><br>
-    <p>
-        <button style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:4px; cursor:pointer;">
+    <h2 style="font-weight: bold;">Dine oplysninger</h2>
+    <form method="POST" asp-action="LogCustomer">
+        <h6 style="font-weight: bold">Brugernavn</h6>
+        <input class="input-style" type="text" name="customerUserName" required="true"/>
+        <h6 style="font-weight: bold">Adgangskode</h6>
+        <input class="input-style" type="text" name="customerPassword" required="true"/>
+        <h6 style="font-weight: bold">Mobilnummer</h6>
+        <input class="input-style" type="number" name="customerPhoneNumber" required="true"/>
+        <h6 style="font-weight: bold">Adresse</h6>
+        <input class="input-style" type="text" name="customerAddress" required="true"/>
+        <h6 style="font-weight: bold">Betalingsmetode</h6>
+        <select class="dropdown" name="customerPaymentMethod" required="true">
+            <option>Mastercard</option>
+            <option>Dankort</option>
+            <option>MobilePay</option>
+            <option>PayPal</option>
+        </select>
+        <br>
+        <button class="button-style">
             Køb
         </button>
-    </p>
-</form>
+    </form>
 </div>
 </div>

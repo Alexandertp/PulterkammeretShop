@@ -36,3 +36,27 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.input-style {
+  width:200px;
+  padding:8px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  margin-bottom:10px;
+}
+
+.button-style {
+  padding: 8px 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dropdown {
+  width:250px; 
+  padding:8px; 
+  border:1px solid #ccc; 
+  border-radius:4px; 
+  margin-bottom:10px;
+}

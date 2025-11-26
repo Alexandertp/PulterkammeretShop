@@ -7,12 +7,10 @@
 {
     <form method="POST" asp-action="LoginEmployee">
         <h6 style="font-weight: bold;">Brugernavn:</h6> 
-        <p><input type="text" name="employeeUserName" 
-                                        style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"></input></p>
+        <input class="input-style"type="text" name="employeeUserName"></input>
         <h6 style="font-weight: bold;">Adgangskode:</h6> 
-        <p><input type="text" name="employeePassword" 
-               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"></input></p>
-        <button style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:4px; cursor:pointer;">Log in</button>
+        <input class="input-style" type="text" name="employeePassword"></input><br/>
+        <button class="button-style">Log in</button>
     </form>
 }
 else
@@ -20,11 +18,11 @@ else
     <h1 style="font-weight: bold;">Tilføj et spil til lageret</h1>
     <form method="POST" asp-action="AddToLager">
         <h6 style="font-weight: bold;">Brugernavn</h6> 
-        <input type="text" name="spilNavn" style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"></input>
+        <input class="input-style"type="text" name="spilNavn"></input>
         <h6 style="font-weight: bold;">Pris</h6> 
-        <input type="number" name="spilPris" style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"></input>
+        <input class="input-style" type="number" name="spilPris"></input>
         <h6 style="font-weight: bold;">Kategori:</h6> 
-        <input type="text" name="spilKategori" style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"></input><br/>
-        <button style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:4px; cursor:pointer;">Tilføj spil</button>
+        <input class="input-style" type="text" name="spilKategori"></input><br/>
+        <button class="button-style">Tilføj spil</button>
     </form>
 }
