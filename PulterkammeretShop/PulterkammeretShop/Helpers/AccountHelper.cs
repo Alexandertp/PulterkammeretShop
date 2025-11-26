@@ -8,6 +8,7 @@ namespace PulterkammeretShop.Helpers
     /// </summary>
     public class AccountHelper
     {
+        private string bestillingPath = "Bestillinger/";
         private List<Employee> ListeMedAlleEmployees = new List<Employee>();
         private List<Customer> ListeMedAlleCustomers = new List<Customer>();
         public List<Employee> listeMedAlleEmployees 
@@ -58,7 +59,7 @@ namespace PulterkammeretShop.Helpers
 
         public void AddOrderToCustomerDirectory(Customer customer, List<Spil> bestilling)
         {
-            string bestillingFolder = "Bestillinger/" + customer.id.ToString() + "/";
+            string bestillingFolder = bestillingPath + customer.id.ToString() + "/";
             if (!Directory.Exists(bestillingFolder))
             {
                 Directory.CreateDirectory(bestillingFolder);
@@ -69,6 +70,26 @@ namespace PulterkammeretShop.Helpers
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
             }
             skriver.Close();
+        }
+
+        public List<Ordre> ReadCustomerOrders(int CustomerId)
+        {
+            List<Ordre> output = new List<Ordre>();
+            Katalog katalog = new Katalog();
+            List<Spil> alleSpil = katalog.HentSpilFraFil();
+            string customerPath = bestillingPath + CustomerId + "/";
+            for (int i = 0; i < Directory.GetFiles(customerPath).Length; i++)
+            {
+                string[] importTekst = File.ReadAllLines(bestillingPath + i + ".txt");
+                foreach (var spil in importTekst)
+                {
+                    string[] splitArr = spil.Split(",");
+                    Spil spilFraId = alleSpil.Find(x => x.id == Convert.ToInt32(splitArr[0]));
+                    spilFraId.antal = int.Parse(splitArr[2]);
+                    output[i].varer.Add(spilFraId);
+                }
+            }
+            return output;
         }
     }
 }
