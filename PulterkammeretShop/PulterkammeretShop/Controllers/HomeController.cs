@@ -10,6 +10,7 @@ public class HomeController : Controller
     private Katalog katalog;
     private static List<Spil> indkøbsKurv;
     public static bool EmployeeLoggedIn = false;
+    public static Customer LoggedInUser;
     public HomeController(ILogger<HomeController> logger)
     {
         if (indkøbsKurv == null)
@@ -65,6 +66,25 @@ public class HomeController : Controller
 
     public IActionResult Lager()
     {
+        
+        return View();
+    }
+    /// <summary>
+    ///
+    ///
+    /// Skrevet af Alexander
+    /// </summary>
+    /// <returns></returns>
+    public IActionResult SeBestillinger()
+    {
+        AccountHelper accountHelper = new AccountHelper();
+        if (LoggedInUser != null)
+        {
+        List<Ordre> ordreListe = accountHelper.ReadCustomerOrders(LoggedInUser.id);
+        Debug.WriteLine(LoggedInUser.name);
+        return View(ordreListe);
+        }
+        Debug.WriteLine("Bruger er ikke logget ind");
         return View();
     }
 
@@ -76,7 +96,7 @@ public class HomeController : Controller
         katalog.AddSpil(nytSpilTilLager);
         return Redirect("Lager");
     }
-
+    [HttpPost]
     public IActionResult LoginEmployee(string employeeUserName, string employeePassword)
     {
         AccountHelper accountHelper = new AccountHelper();
@@ -89,6 +109,20 @@ public class HomeController : Controller
         }
         Debug.WriteLine("Employee Login er " + EmployeeLoggedIn);
         return Redirect($"Lager");
+    }
+
+    /// <summary>
+    /// Skrevet af Alexander
+    /// </summary>
+    /// <param name="customerName"></param>
+    /// <param name="customerPassword"></param>
+    /// <returns></returns>
+    [HttpPost]
+    public IActionResult LoginUser(string customerName, string customerPassword)
+    {
+        AccountHelper accountHelper = new AccountHelper();
+        LoggedInUser = accountHelper.listeMedAlleCustomers.Where(x => x.name == customerName && x.password == customerPassword).FirstOrDefault();
+        return Redirect("SeBestillinger");
     }
     
     [HttpPost]

@@ -1,0 +1,31 @@
+@using PulterkammeretShop.Controllers
+@{
+    ViewData["Title"] = "SeBestillinger";
+}
+@model List<Ordre>
+@if (HomeController.LoggedInUser == null)
+{
+    <h1> Please log in </h1>
+    <form method="POST" asp-action="LoginUser">
+        <input type="text" name="customerName"/>
+        <input type="text" name="customerPassword"/>
+        <button>Log In</button>
+    </form>
+}
+else
+{
+    <div>
+        @foreach (Ordre ordre in Model)
+        {
+            foreach (Spil spil in ordre.varer)
+            {
+                <span>@spil.id</span>
+                <span>@spil.navn</span>
+                <span>@spil.pris</span>
+                <span>@spil.kategori</span>
+            }
+
+            <br/>
+        }
+    </div>
+}
