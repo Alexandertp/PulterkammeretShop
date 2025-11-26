@@ -3,35 +3,81 @@
 }
 @model List<Spil>
 
-<div class="text-center">
-    @if (Model != null)
-    {
-        double totalPris = 0;
-        @foreach (Spil spil in Model)
+<style>
+    .spilIKurv {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .two-columns {
+        display: flex;
+        gap: 20px;
+    }
+    .column {
+        flex: 1;
+    }
+</style>
+
+<div class="two-columns">
+    <div class="column">
+    <h2 style="font-weight: bold;">Indkøbskurv</h2>
+    <div class="Kurv">
+        @if (Model != null)
         {
-            totalPris += spil.pris * spil.antal;
-            
+            double totalPris = 0;
+            @foreach (Spil spil in Model)
+            {
+                totalPris += spil.pris * spil.antal;
+
+                <div class="spilIKurv">
+                    <h4 style="font-weight: bolder">@spil.navn</h4>
+                    <h6 style="font-weight: bold">@spil.pris DKK pr. spil</h6><br/>
+                    <h6>@spil.antal spil i kurven</h6>
+                </div>
+            }
+
             <div>
-                @spil.navn @spil.antal
-                <hr/>
+                <br/>
+                <h5 style="font-weight: bold; text-decoration: underline;">Pris i alt: @totalPris DKK</h5>
+                <br/>
             </div>
         }
-        <div>
-            Fuld pris: @totalPris kr
-        </div>
-    }
+    </div>
+    </div>
 </div>
 
+<div class="column">
+<h2 style="font-weight: bold;">Dine oplysninger</h2>
 <form method="POST" asp-action="LogCustomer">
-    <span>Brugernavn: </span><input type="text" name="customerUserName" aria-label="Brugernavn" required="true"/><br>
-    <span>Adgangskode: </span><input type="text" name="customerPassword" arial-label="Adgangskode" required="true"/><br/>
-    <span>Mobilnummer: </span><input type="number" name="customerPhoneNumber" arial-label="Mobilnummer" required="true"/><br/>
-    <span>Adresse: </span><input type="text" name="customerAddress" arial-label="Adresse" required="true"/><br/>
-    <span>Betalingsmetode: </span><select name="customerPaymentMethod">
+    <h6 style="font-weight: bold">Brugernavn</h6>
+    <p>
+        <input type="text" name="customerUserName" required="true"
+               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
+    <h6 style="font-weight: bold">Adgangskode</h6>
+    <p>
+        <input type="text" name="customerPassword" required="true"
+               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
+    <h6 style="font-weight: bold">Mobilnummer</h6>
+    <p>
+        <input type="number" name="customerPhoneNumber" required="true"
+               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
+    <h6 style="font-weight: bold">Adresse</h6>
+    <p>
+        <input type="text" name="customerAddress" required="true"
+               style="width:200px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;"/></p>
+    <h6 style="font-weight: bold">Betalingsmetode</h6>
+    <select name="customerPaymentMethod" required="true"
+            style="width:250px; padding:8px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;">
         <option>Mastercard</option>
         <option>Dankort</option>
         <option>MobilePay</option>
         <option>PayPal</option>
     </select><br>
-    <span><button>Køb nu, lige nu, med det samme, eller jeg slagter dig</button></span>
+    <p>
+        <button style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:4px; cursor:pointer;">
+            Køb
+        </button>
+    </p>
 </form>
+</div>

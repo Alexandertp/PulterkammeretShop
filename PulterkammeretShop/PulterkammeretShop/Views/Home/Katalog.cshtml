@@ -2,20 +2,35 @@
     ViewData["Title"] = "Katalog";
 }
 @model List<Spil>
-<div>
-    @foreach (Spil spil in Model)
-    {
-        <span>@spil.id</span>
-        <span>@spil.navn</span>
-        <span>@spil.pris</span>
-        <span>@spil.kategori</span>
-        <form method="POST" asp-action="BuyItem">
-            <input type="hidden" name="spilId" value="@spil.id">
-            <button>Tilføj til kurv</button>
-        </form>
-        <br>
+
+<style>
+    .katalog {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
     }
-</div>
+    .spil {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+</style>
 
 <div>
+    <div class="katalog">
+    @foreach (Spil spil in Model)
+    {
+        <div class="spil">
+            <h4 style="font-weight: bolder">@spil.navn</h4>
+            <h6 style="font-weight: bold">@spil.pris DKK</h6>
+            <p>@spil.kategori</p>
+            <form method="POST" asp-action="BuyItem">
+                <input type="hidden" name="spilId" value="@spil.id">
+                <button style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:4px; cursor:pointer;">Tilføj til kurv</button>
+            </form>
+        </div>
+    }
+    </div>
 </div>

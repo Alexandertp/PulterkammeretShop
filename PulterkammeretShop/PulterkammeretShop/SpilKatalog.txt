@@ -4,7 +4,7 @@
 4,Codenames,175,Familie
 5,Hitster,150,Musikquiz
 6,Wingspan,200,Strategi
-7,Stardew Valley: The Board Game,550,Strategi
+7,Stardew Valley,550,Strategi
 8,Dorfromantic,75,Familie
 9,Happy Little Dinosaurs,185,Strategi
 10,Here to Slay,180,Strategi
