@@ -57,8 +57,10 @@ namespace PulterkammeretShop.Helpers
         {
             string[] importTekst = System.IO.File.ReadAllLines("Customers.txt");
             List<Customer> customerListeTemp = new List<Customer>();
+            //Her tager vi hver plads i importTekst Array'et og laver hver String om til den relevante datatype for et Customer Objekt
             foreach (string customer in importTekst)
             {
+                //Her opdeles string 'customer' og bliver lagt i et array, den bliver opdelt ved hvert komma i stringen, kommaerne bliver også fjernet samtidig
                 string[] splitArr = customer.Split(",");
                 int newId = Convert.ToInt32(splitArr[0]);
                 string newName = splitArr[1];
@@ -66,8 +68,10 @@ namespace PulterkammeretShop.Helpers
                 int newPhoneNumber = Convert.ToInt32(splitArr[3]);
                 string newAddress = splitArr[4];
                 string newPayment = splitArr[5];
+                //Når vi har fundet alle vores værdier laver vi et ny Customer objekt og tilføjer det til listen
                 customerListeTemp.Add(new Customer(newId, newName, newPassword, newPhoneNumber, newAddress, newPayment));
             }
+            //Når listen er lavet, returnerer vi den.
             return customerListeTemp;
         }
         
