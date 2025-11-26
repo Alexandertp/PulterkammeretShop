@@ -1,6 +1,10 @@
-0,Matador,299,trash
-1001,Monopoly,349,trash
-1002,Risk,199,strategi
-1003,Cluedo,249,trivia
-1004,Scrabble,179,ordspil
-5,Terraforming Mars,350,Strategi
+1,Terraforming Mars,345,Strategi
+2,Catan,225,Familie
+3,Small World,350,Strategi
+4,Codenames,175,Familie
+5,Hitster,150,Musikquiz
+6,Wingspan,200,Strategi
+7,Stardew Valley: The Board Game,550,Strategi
+8,Dorfromantic,75,Familie
+9,Happy Little Dinosaurs,185,Strategi
+10,Here to Slay,180,Strategi
