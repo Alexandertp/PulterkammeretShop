@@ -7,10 +7,13 @@ public class Ordre
         get { return totalPris;} 
         set {totalPris = value;}
     }
+    
     public string ordreDato = "";
+    
     public Ordre()
     {
         ordreDato = DateTime.Now.ToShortDateString();
     }
+    
     public List<Spil> varer = new List<Spil>();
 }

@@ -24,6 +24,13 @@ namespace PulterkammeretShop.Helpers
             ListeMedAlleEmployees = GetEmployees();
             ListeMedAlleCustomers = GetCustomers();
         }
+        
+        /// <summary>
+        /// Indsamler en Liste af Employees fra en fil på computeren
+        ///
+        /// Skrevet af Oliver, Anne Sofie, og Kasper
+        /// </summary>
+        /// <returns></returns>
         public List<Employee> GetEmployees()
         {
             string[] importTekst = System.IO.File.ReadAllLines("Employee.txt");
@@ -39,6 +46,13 @@ namespace PulterkammeretShop.Helpers
             }
             return employeeListeTemp;
         }
+        
+        /// <summary>
+        /// Indsamler en Liste af Customers fra en fil på computeren
+        ///
+        /// Skrevet af Oliver, Anne Sofie, og Kasper
+        /// </summary>
+        /// <returns></returns>
         public List<Customer> GetCustomers()
         {
             string[] importTekst = System.IO.File.ReadAllLines("Customers.txt");
@@ -56,7 +70,14 @@ namespace PulterkammeretShop.Helpers
             }
             return customerListeTemp;
         }
-
+        
+        /// <summary>
+        /// Skriver en ordre til en ny fil i en mappe på computeren, hvis mappen ikke allerede eksisterer, skaber den en
+        ///
+        /// Skrevet af Anne Sofie & Alexander
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="bestilling"></param>
         public void AddOrderToCustomerDirectory(Customer customer, List<Spil> bestilling)
         {
             string bestillingFolder = bestillingPath + customer.id.ToString() + "/";
@@ -71,7 +92,15 @@ namespace PulterkammeretShop.Helpers
             }
             skriver.Close();
         }
-
+        
+        //TODO: Abstract function
+        /// <summary>
+        /// Henter en Liste af Ordre fra en folder på computeren, ud fra den givne CustomerId
+        ///
+        /// Skrevet af Kasper & Alexander
+        /// </summary>
+        /// <param name="CustomerId"></param>
+        /// <returns></returns>
         public List<Ordre> ReadCustomerOrders(int CustomerId)
         {
             List<Ordre> output = new List<Ordre>();

@@ -49,7 +49,8 @@ namespace PulterkammeretShop.Helpers
 
             ListeMedAlleSpil.Add(spil);
         }
-
+        
+        //  TODO: Udvid med Frølund
         public List<Spil> Search(string SpilNavn, string? SpilKategori)
         {
             List<Spil> Bingbong =  new List<Spil>();

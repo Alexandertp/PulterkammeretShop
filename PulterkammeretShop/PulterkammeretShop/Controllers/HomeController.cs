@@ -19,6 +19,7 @@ public class HomeController : Controller
         }
         _logger = logger;
     }
+    
     //Program starts here :)
     public IActionResult Index()
     {
@@ -28,9 +29,9 @@ public class HomeController : Controller
         }
         return View();
     }
+    
     public IActionResult Katalog()
     {
-        
         Katalog katalog = new Katalog();
         List<Spil> SpilListe = katalog.HentSpilFraFil();
         return View(SpilListe);
@@ -41,7 +42,19 @@ public class HomeController : Controller
         
         return View(indkøbsKurv);
     }
-
+    
+    //TODO: Rename?
+    /// <summary>
+    /// Tilføjer en ordre til en fil på systemet
+    ///
+    /// Skrevet af Anne Sofie & Alexander
+    /// </summary>
+    /// <param name="customerUserName"></param>
+    /// <param name="customerPassword"></param>
+    /// <param name="customerPhoneNumber"></param>
+    /// <param name="customerAddress"></param>
+    /// <param name="customerPaymentMethod"></param>
+    /// <returns></returns>
     public IActionResult LogCustomer(string customerUserName, string customerPassword, int customerPhoneNumber, string customerAddress, string customerPaymentMethod)
     {
         bool isCustomerInSystem = false;
@@ -69,6 +82,7 @@ public class HomeController : Controller
         
         return View();
     }
+    
     /// <summary>
     ///
     ///
