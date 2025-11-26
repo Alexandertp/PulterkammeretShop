@@ -78,14 +78,20 @@ namespace PulterkammeretShop.Helpers
             Katalog katalog = new Katalog();
             List<Spil> alleSpil = katalog.HentSpilFraFil();
             string customerPath = bestillingPath + CustomerId + "/";
+            if (!Directory.Exists(customerPath))
+            {
+                Directory.CreateDirectory(customerPath);
+            }
             for (int i = 0; i < Directory.GetFiles(customerPath).Length; i++)
             {
-                string[] importTekst = File.ReadAllLines(bestillingPath + i + ".txt");
+                Debug.WriteLine(customerPath + i);
+                string[] importTekst = File.ReadAllLines(customerPath + i + ".txt");
                 foreach (var spil in importTekst)
                 {
                     string[] splitArr = spil.Split(",");
                     Spil spilFraId = alleSpil.Find(x => x.id == Convert.ToInt32(splitArr[0]));
                     spilFraId.antal = int.Parse(splitArr[2]);
+                    output.Add(new Ordre());
                     output[i].varer.Add(spilFraId);
                 }
             }
