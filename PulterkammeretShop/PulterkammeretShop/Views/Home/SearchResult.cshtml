@@ -1,18 +1,15 @@
-@model TModel
+@using PulterkammeretShop.Controllers
 
 @{
-    Layout = null;
+    ViewData["Title"] = "SearchResult";
 }
+@model List<Spil>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
-</div>
-</body>
-</html>
+    <div>
+        <div class="ShowSearch">
+        @foreach (Spil spil in Model)
+        {
+            
+        }
+    </div>
+    </div>

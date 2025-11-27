@@ -43,6 +43,12 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SeBestillinger">Bestillinger</a>
                     </li>
+                    <li class="nav-item">
+                        <form method="POST" asp-area="" asp-controller="Home" asp-action="SearchResult">
+                            <input class="input-style" type="text" name="searchQuery"></input>
+                            <button class="button-style">Søg</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

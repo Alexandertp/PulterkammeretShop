@@ -54,9 +54,10 @@ namespace PulterkammeretShop.Helpers
         public List<Spil> Search(string SpilNavn, string? SpilKategori)
         {
             List<Spil> Bingbong =  new List<Spil>();
+            Bingbong = ListeMedAlleSpil.FindAll(spil => spil.navn.StartsWith(SpilNavn));
             foreach (Spil spil in ListeMedAlleSpil)
             {
-                if (spil.navn == SpilNavn)
+                if (spil.kategori == SpilKategori)
                 {
                     Bingbong.Add(spil);
                 }

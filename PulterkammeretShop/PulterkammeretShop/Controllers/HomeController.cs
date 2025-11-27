@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PulterkammeretShop.Models;
 using PulterkammeretShop.Helpers;
+using AspNetCoreGeneratedDocument;
 namespace PulterkammeretShop.Controllers;
 
 public class HomeController : Controller
@@ -161,6 +162,14 @@ public class HomeController : Controller
         return Redirect(@"Katalog");
     }
     
+    public IActionResult SearchResult(string searchQuery)
+    {
+
+        Katalog katalog = new Katalog();
+        List<Spil> newSearch = katalog.Search(searchQuery,null);
+        return View(newSearch);
+    }
+
     public IActionResult Privacy()
     {
         return View();
