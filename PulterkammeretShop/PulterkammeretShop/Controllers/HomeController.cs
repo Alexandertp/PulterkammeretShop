@@ -2,7 +2,6 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PulterkammeretShop.Models;
 using PulterkammeretShop.Helpers;
-using AspNetCoreGeneratedDocument;
 namespace PulterkammeretShop.Controllers;
 
 public class HomeController : Controller
