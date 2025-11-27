@@ -117,14 +117,13 @@ namespace PulterkammeretShop.Helpers
             }
             for (int i = 0; i < Directory.GetFiles(customerPath).Length; i++)
             {
-                Debug.WriteLine(customerPath + i);
                 string[] importTekst = File.ReadAllLines(customerPath + i + ".txt");
+                output.Add(new Ordre());
                 foreach (var spil in importTekst)
                 {
                     string[] splitArr = spil.Split(",");
-                    Spil spilFraId = alleSpil.Find(x => x.id == Convert.ToInt32(splitArr[0]));
+                    Spil spilFraId = alleSpil.Find(findSpil => findSpil.id == Convert.ToInt32(splitArr[0]));
                     spilFraId.antal = int.Parse(splitArr[2]);
-                    output.Add(new Ordre());
                     output[i].varer.Add(spilFraId);
                 }
             }
