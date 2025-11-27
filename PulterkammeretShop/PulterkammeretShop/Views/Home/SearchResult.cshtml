@@ -7,9 +7,10 @@
 
     <div>
         <div class="ShowSearch">
-        @foreach (Spil spil in Model)
-        {
-            
-        }
-    </div>
+            @foreach (Spil spil in Model)
+            {
+                <span>@spil.navn</span>
+                <span>@spil.pris</span>
+            }
+        </div>
     </div>
