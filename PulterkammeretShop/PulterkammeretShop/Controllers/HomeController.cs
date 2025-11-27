@@ -161,11 +161,11 @@ public class HomeController : Controller
         return Redirect(@"Katalog");
     }
     
-    public IActionResult SearchResult(string searchQuery)
+    public IActionResult SearchResult(string searchQuery, string spilKategori)
     {
 
         Katalog katalog = new Katalog();
-        List<Spil> newSearch = katalog.Search(searchQuery,null);
+        List<Spil> newSearch = katalog.Search(searchQuery, spilKategori);
         return View(newSearch);
     }
 

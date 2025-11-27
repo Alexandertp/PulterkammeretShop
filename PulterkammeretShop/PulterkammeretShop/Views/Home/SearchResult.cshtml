@@ -5,12 +5,42 @@
 }
 @model List<Spil>
 
+    <style>
+    .ShowSearch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+        .spil{
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
     <div>
         <div class="ShowSearch">
-            @foreach (Spil spil in Model)
+            @if(Model.Count==0)
             {
-                <span>@spil.navn</span>
-                <span>@spil.pris</span>
+                <div>
+                    Ingen spil passer til din søgning
+                </div>
+
+            }
+            else
+            {
+                @foreach (Spil spil in Model)
+                {
+                    <div class="spil">
+                        <h4 style="font-weight: bolder">@spil.navn</h4>
+                        <h6 style="font-weight: bold">@spil.pris DKK pr. spil</h6>
+                        <p>@spil.kategori</p>
+                        <form method="POST" asp-action="BuyItem">
+                            <input type="hidden" name="spilId" value="@spil.id">
+                            <button class="button-style">Tilføj til kurv</button>
+                        </form>
+                    </div>
+                }
             }
         </div>
     </div>

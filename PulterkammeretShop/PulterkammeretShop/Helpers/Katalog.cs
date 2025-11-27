@@ -51,16 +51,21 @@ namespace PulterkammeretShop.Helpers
         }
         
         //  TODO: Udvid med Frølund
-        public List<Spil> Search(string SpilNavn, string? SpilKategori)
+        public List<Spil> Search(string? SpilNavn, string? SpilKategori)
         {
             List<Spil> Bingbong =  new List<Spil>();
-            Bingbong = ListeMedAlleSpil.FindAll(spil => spil.navn.Contains(SpilNavn));
-            foreach (Spil spil in ListeMedAlleSpil)
+            if (SpilNavn != null)
             {
-                if (spil.kategori == SpilKategori)
+                SpilNavn = SpilNavn.ToLower();
+                Bingbong = ListeMedAlleSpil.FindAll(spil => spil.navn.ToLower().Contains(SpilNavn));
+                if (SpilKategori != null)
                 {
-                    Bingbong.Add(spil);
+                    Bingbong = Bingbong.FindAll(spil => spil.kategori.Contains(SpilKategori));
                 }
+            }
+            else
+            {
+                Bingbong = ListeMedAlleSpil.FindAll(spil => spil.kategori.Contains(SpilKategori));
             }
             return Bingbong;
         }

@@ -46,6 +46,12 @@
                     <li class="nav-item">
                         <form method="POST" asp-area="" asp-controller="Home" asp-action="SearchResult">
                             <input class="input-style" type="text" name="searchQuery"></input>
+                            <select class="dropdown" name="spilKategori">
+                                <option value=null>-Vælg kategori-</option>
+                                <option>Strategi</option>
+                                <option>Familie</option>
+                                <option>Musikquiz</option>
+                            </select>
                             <button class="button-style">Søg</button>
                         </form>
                     </li>
