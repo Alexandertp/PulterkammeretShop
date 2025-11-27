@@ -3,13 +3,23 @@
     ViewData["Title"] = "SeBestillinger";
 }
 @model List<Ordre>
+
+<style>
+    .spil{
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
+
 @if (HomeController.LoggedInUser == null)
 {
     <h1> Please log in </h1>
     <form method="POST" asp-action="LoginUser">
-        <input type="text" name="customerName"/>
-        <input type="text" name="customerPassword"/>
-        <button>Log In</button>
+        <input class="input-style" type="text" name="customerName"/>
+        <input class="input-style" type="text" name="customerPassword"/>
+        <button class="button-style">Log In</button>
     </form>
 }
 else
@@ -17,13 +27,15 @@ else
     <div>
         @foreach (Ordre ordre in Model)
         {
+            <h2>Bestilling</h2>
             foreach (Spil spil in ordre.varer)
             {
-                <span>ID: @spil.id</span><br/>
-                <span>Navn: @spil.navn</span><br/>
-                <span>Pris: @spil.pris'-</span><br/>
-                <span>Kategori: @spil.kategori</span><br/>
-                <hr/>
+                <div class="spil">
+                    <h4 style="font-weight: bolder">@spil.navn</h4>
+                    <h6 style="font-weight: bold">@spil.pris DKK</h6>
+                    <h6>@spil.antal stk.</h6>
+                    <h6>@spil.kategori</h6>
+                </div>
             }
 
             <br/>
