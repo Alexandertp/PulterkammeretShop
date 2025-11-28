@@ -115,19 +115,32 @@ namespace PulterkammeretShop.Helpers
             {
                 Directory.CreateDirectory(customerPath);
             }
+            //Dette loop kører igennem hver dokument inde i den folder som indeholder kundens bestillinger. Hver dokument er sin egen ordre, og indeholder en liste af spil
             for (int i = 0; i < Directory.GetFiles(customerPath).Length; i++)
             {
+                //Læser indholdet af filen, hver punkt i dette array er en linje i dokumentet
                 string[] importTekst = File.ReadAllLines(customerPath + i + ".txt");
                 output.Add(new Ordre());
-                foreach (var spil in importTekst)
-                {
-                    string[] splitArr = spil.Split(",");
-                    Spil spilFraId = alleSpil.Find(findSpil => findSpil.id == Convert.ToInt32(splitArr[0]));
-                    spilFraId.antal = int.Parse(splitArr[2]);
-                    output[i].varer.Add(spilFraId);
-                }
+                //Dette loop kører over hver position i array'et ovenover, og repræsenterer hver spil i dokumentet
+                
+                output[i].varer.AddRange(SpilFraStringArray(importTekst, alleSpil));
+                
             }
             return output;
+        }
+
+        private List<Spil> SpilFraStringArray(string[] customerOrders, List<Spil> fullSpilListe)
+        {
+            List<Spil> SpilListe = new List<Spil>();
+
+            foreach (string spil in customerOrders)
+            {
+                string[] splitArr = spil.Split(",");
+                Spil spilFraId = fullSpilListe.Find(findSpil => findSpil.id == Convert.ToInt32(splitArr[0]));
+                spilFraId.antal = int.Parse(splitArr[2]);
+                SpilListe.Add(spilFraId);
+            }
+            return  SpilListe;
         }
     }
 }
