@@ -54,11 +54,12 @@ namespace PulterkammeretShop.Helpers
         public List<Spil> Search(string? SpilNavn, string? SpilKategori)
         {
             List<Spil> søgeResultat =  new List<Spil>();
+            
             if (SpilNavn != null)
             {
                 SpilNavn = SpilNavn.ToLower();
                 søgeResultat = ListeMedAlleSpil.FindAll(spil => spil.navn.ToLower().Contains(SpilNavn));
-                if (SpilKategori != null)
+                if (SpilKategori != null &&  SpilKategori != "null")
                 {
                     søgeResultat = søgeResultat.FindAll(spil => spil.kategori.Contains(SpilKategori));
                 }
@@ -67,6 +68,7 @@ namespace PulterkammeretShop.Helpers
             {
                 søgeResultat = ListeMedAlleSpil.FindAll(spil => spil.kategori.Contains(SpilKategori));
             }
+            
             return søgeResultat;
         }
     }
