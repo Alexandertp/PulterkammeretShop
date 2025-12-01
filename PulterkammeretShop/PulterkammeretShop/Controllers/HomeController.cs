@@ -160,6 +160,44 @@ public class HomeController : Controller
         }
         return Redirect(@"Katalog");
     }
+
+    public IActionResult AddMoreToIndkøbskurv(int spilId)
+    {
+        katalog = new Katalog();
+        List<Spil> SpilListe = katalog.HentSpilFraFil();
+        if (indkøbsKurv.Exists(spil => spil.id == spilId))
+        {
+            foreach (Spil spil in indkøbsKurv)
+            {
+                if (spil.id == spilId)
+                {
+                    spil.antal++;
+                }
+            }
+        }
+        return Redirect(@"Checkout");
+    }
+
+    public IActionResult AddLessToIndkøbskurv(int spilId)
+    {
+        katalog = new Katalog();
+        List<Spil> SpilListe = katalog.HentSpilFraFil();
+        if (indkøbsKurv.Exists(spil => spil.id == spilId))
+        {
+            foreach (Spil spil in indkøbsKurv)
+            {
+                if (spil.id == spilId)
+                {
+                    spil.antal--;
+                    if (spil.antal <= 0)
+                    {
+                        indkøbsKurv.Remove(spil);
+                    }
+                }
+            }
+        }
+        return Redirect(@"Checkout");
+    }
     
     public IActionResult SearchResult(string searchQuery, string spilKategori)
     {

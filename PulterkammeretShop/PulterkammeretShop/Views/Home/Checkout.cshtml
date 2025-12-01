@@ -34,6 +34,17 @@
                     <h4 style="font-weight: bolder">@spil.navn</h4>
                     <h6 style="font-weight: bold">@spil.pris DKK pr. spil</h6><br/>
                     <h6>@spil.antal spil i kurven</h6>
+                    <div style="display:flex; gap:10px;">
+                        <form method="POST" asp-action="AddLessToIndkøbskurv">
+                            <input type="hidden" name="spilId" value="@spil.id">
+                            <button class="button-style">Fjern</button>
+                        </form>
+                        <form method="POST" asp-action="AddMoreToIndkøbskurv">
+                            <input type="hidden" name="spilId" value="@spil.id">
+                            <button class="button-style">Tilføj</button>
+                        </form>
+
+                    </div>
                 </div>
             }
 
