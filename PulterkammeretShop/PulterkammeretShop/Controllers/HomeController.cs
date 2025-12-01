@@ -94,9 +94,9 @@ public class HomeController : Controller
         AccountHelper accountHelper = new AccountHelper();
         if (LoggedInUser != null)
         {
-        List<Ordre> ordreListe = accountHelper.ReadCustomerOrders(LoggedInUser.id);
-        Debug.WriteLine(LoggedInUser.name);
-        return View(ordreListe);
+            List<Ordre> ordreListe = accountHelper.ReadCustomerOrders(LoggedInUser.id);
+            Debug.WriteLine(LoggedInUser.name);
+            return View(ordreListe);
         }
         Debug.WriteLine("Bruger er ikke logget ind");
         return View();
@@ -106,7 +106,7 @@ public class HomeController : Controller
     public IActionResult AddToLager(string spilNavn, double spilPris, string spilKategori)
     {
         Katalog katalog = new Katalog();
-        Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count,spilNavn, spilPris, spilKategori);
+        Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count+1,spilNavn, spilPris, spilKategori);
         katalog.AddSpil(nytSpilTilLager);
         return Redirect("Lager");
     }

@@ -23,7 +23,7 @@
             @if(Model.Count==0)
             {
                 <div>
-                    Ingen spil passer til din søgning
+                    Ingen spil passer til din sÃ¸gning
                 </div>
 
             }
@@ -37,7 +37,7 @@
                         <p>@spil.kategori</p>
                         <form method="POST" asp-action="BuyItem">
                             <input type="hidden" name="spilId" value="@spil.id">
-                            <button class="button-style">Tilføj til kurv</button>
+                            <button class="button-style">TilfÃ¸j til kurv</button>
                         </form>
                     </div>
                 }
