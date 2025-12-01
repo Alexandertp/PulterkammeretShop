@@ -46,3 +46,19 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+.navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand span,
+.navbar-brand img {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
