@@ -11,54 +11,53 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            
-            <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/images/HeaderLogo.png" alt="Pulterkammeret Logo" style="height:40px; width:auto; margin-right:10px;"/>
-                <span>Pulterkammeret</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Katalog">Katalog</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Checkout">Indkøbskurv</a>
-                    </li>
-                    <li>
-                        <a class="nav-link dark text-dark" asp-area="" asp-controller="Home" asp-action="Lager">Lager</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SeBestillinger">Bestillinger</a>
-                    </li>
-                    <li class="nav-item">
-                        <form method="POST" asp-area="" asp-controller="Home" asp-action="SearchResult">
-                            <input class="input-style" type="text" name="searchQuery"></input>
-                            <select class="dropdown" name="spilKategori">
-                                <option value=null>-Vælg kategori-</option>
-                                <option>Strategi</option>
-                                <option>Familie</option>
-                                <option>Musikquiz</option>
-                            </select>
-                            <button class="button-style">Søg</button>
-                        </form>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/HeaderLogo.png" alt="Pulterkammeret Logo" style="height:40px; width:auto; margin-right:10px;"/>
+                    <span>Pulterkammeret</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Katalog">Katalog</a>
+                        </li>
+                        <li>
+                            <a class="nav-link dark text-dark" asp-area="" asp-controller="Home" asp-action="Lager">Lager</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SeBestillinger">Bestillinger</a>
+                        </li>
+                        <li class="nav-item">
+                            <form method="POST" asp-area="" asp-controller="Home" asp-action="SearchResult">
+                                <input class="input-style" type="text" name="searchQuery"></input>
+                                <select class="dropdown" name="spilKategori">
+                                    <option value=null>-Vælg kategori-</option>
+                                    <option>Strategi</option>
+                                    <option>Familie</option>
+                                    <option>Musikquiz</option>
+                                </select>
+                                <button class="button-style">Søg</button>
+                            </form>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Checkout">
+                                <img src="~/images/Icons/Indkøbskurv.png" style="height:40px;"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 </header>
 <div class="container">
     <main role="main" class="pb-3">
