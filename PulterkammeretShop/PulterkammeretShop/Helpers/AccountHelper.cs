@@ -127,15 +127,27 @@ namespace PulterkammeretShop.Helpers
             {
                 Directory.CreateDirectory(customerPath);
             }
+
+            string[] bestillingsDatoer = new string[50];
+            if (File.Exists(customerPath + "Meta.txt"))
+            {
+                string[] tempBestillingsDatoer = File.ReadAllLines(customerPath + "Meta.txt");
+                bestillingsDatoer = tempBestillingsDatoer;
+            }
+            
+            
             //Dette loop kører igennem hver dokument inde i den folder som indeholder kundens bestillinger. Hver dokument er sin egen ordre, og indeholder en liste af spil
             for (int i = 0; i < Directory.GetFiles(customerPath).Length-1; i++) //minus en fordi meta filen er til sidst :)
             {
+                
+                string[] datoSplitter = bestillingsDatoer[i].Split(",");
                 //Læser indholdet af filen, hver punkt i dette array er en linje i dokumentet
                 string[] importTekst = File.ReadAllLines(customerPath + i + ".txt");
                 output.Add(new Ordre());
+                output.Last().ordreDato = datoSplitter[1];
                 //Dette loop kører over hver position i array'et ovenover, og repræsenterer hver spil i dokumentet
                 
-                output[i].varer.AddRange(SpilFraStringArray(importTekst, alleSpil));
+                output.Last().varer.AddRange(SpilFraStringArray(importTekst, alleSpil));
                 
             }
             return output;
