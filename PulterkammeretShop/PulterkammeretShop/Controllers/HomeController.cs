@@ -177,7 +177,7 @@ public class HomeController : Controller
         return Redirect(@"Checkout");
     }
 
-    public IActionResult AddLessToIndkøbskurv(int spilId)
+    public IActionResult RemoveFromIndkøbskurv(int spilId)
     {
         if (indkøbsKurv.Exists(spil => spil.id == spilId))
         {
