@@ -13,7 +13,7 @@ public class Ordre
     
     public Ordre()
     {
-        ordreDato = DateTime.Now.ToShortDateString();
+        ordreDato = DateTime.Now.ToShortDateString() +  " " + DateTime.Now.ToLongTimeString();
         varer = new List<Spil>();
     }
     
