@@ -26,7 +26,8 @@ namespace PulterkammeretShop.Models
             phoneNumber = PhoneNumber;
             address = Address;
             paymentInfo = PaymentInfo;
+            ordre = new List<Ordre>();
         }
-        List <Ordre> ordre = new List<Ordre>();
+        public List <Ordre> ordre = new List<Ordre>();
     }
 }
