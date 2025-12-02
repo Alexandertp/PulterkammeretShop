@@ -8,14 +8,14 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private Katalog katalog;
-    private static List<Spil> indkøbsKurv;
+    private static Ordre indkøbsKurv;
     public static bool EmployeeLoggedIn = false;
     public static Customer LoggedInUser;
     public HomeController(ILogger<HomeController> logger)
     {
         if (indkøbsKurv == null)
         {
-            indkøbsKurv = new List<Spil>();
+            indkøbsKurv = new Ordre();
         }
         _logger = logger;
     }
@@ -55,7 +55,7 @@ public class HomeController : Controller
     /// <param name="customerAddress"></param>
     /// <param name="customerPaymentMethod"></param>
     /// <returns></returns>
-    public IActionResult LogCustomer(string customerUserName, string customerPassword, int customerPhoneNumber, string customerAddress, string customerPaymentMethod)
+    public IActionResult AfslutBestilling(string customerUserName, string customerPassword, int customerPhoneNumber, string customerAddress, string customerPaymentMethod)
     {
         bool isCustomerInSystem = false;
         Customer inputCustomer = new Customer(null, customerUserName, customerPassword,  customerPhoneNumber, customerAddress, customerPaymentMethod);
@@ -67,14 +67,21 @@ public class HomeController : Controller
                 customerPaymentMethod == customer.paymentInfo)
             {
                 accountHelper.AddOrderToCustomerDirectory(customer, indkøbsKurv);
+                isCustomerInSystem = true;
+                LoggedInUser = customer;
+                LoggedInUser.ordre.Add(indkøbsKurv);
             }
         }
 
-        if (isCustomerInSystem)
+        if (!isCustomerInSystem)
         {
-            
+            Customer nyKunde = new Customer(accountHelper.listeMedAlleCustomers.Count+1, customerUserName, customerPassword, customerPhoneNumber, customerAddress, customerPaymentMethod);
+            accountHelper.AddNewCustomer(nyKunde);
+            accountHelper.AddOrderToCustomerDirectory(nyKunde, indkøbsKurv);
+            LoggedInUser = nyKunde;
+            LoggedInUser.ordre.Add(indkøbsKurv);
         }
-        return Redirect("Checkout");
+        return Redirect("Receipt");
     }
 
     public IActionResult Lager()
@@ -103,7 +110,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult AddToLager(string spilNavn, double spilPris, string spilKategori)
+    public IActionResult AddToLager(string spilNavn, int spilPris, string spilKategori)
     {
         Katalog katalog = new Katalog();
         Spil nytSpilTilLager = new Spil(katalog.HentSpilFraFil().Count+1,spilNavn, spilPris, spilKategori);
@@ -144,9 +151,9 @@ public class HomeController : Controller
     {
         katalog = new Katalog();
         List<Spil> SpilListe = katalog.HentSpilFraFil();
-        if (indkøbsKurv.Exists(spil => spil.id == spilId))
+        if (indkøbsKurv.varer.Exists(spil => spil.id == spilId))
         {
-            foreach (Spil spil in indkøbsKurv)
+            foreach (Spil spil in indkøbsKurv.varer)
             {
                 if (spil.id == spilId)
                 {
@@ -156,7 +163,7 @@ public class HomeController : Controller
         }
         else
         {
-            indkøbsKurv.Add(SpilListe.First(spil => spil.id == spilId));
+            indkøbsKurv.varer.Add(SpilListe.First(spil => spil.id == spilId));
         }
         return Redirect(@"Katalog");
     }
@@ -164,9 +171,9 @@ public class HomeController : Controller
     public IActionResult AddMoreToIndkøbskurv(int spilId)
     {
         
-        if (indkøbsKurv.Exists(spil => spil.id == spilId))
+        if (indkøbsKurv.varer.Exists(spil => spil.id == spilId))
         {
-            foreach (Spil spil in indkøbsKurv)
+            foreach (Spil spil in indkøbsKurv.varer)
             {
                 if (spil.id == spilId)
                 {
@@ -179,22 +186,27 @@ public class HomeController : Controller
 
     public IActionResult RemoveFromIndkøbskurv(int spilId)
     {
-        if (indkøbsKurv.Exists(spil => spil.id == spilId))
+        if (indkøbsKurv.varer.Exists(spil => spil.id == spilId))
         {
-            foreach (Spil spil in indkøbsKurv)
+            foreach (Spil spil in indkøbsKurv.varer)
             {
                 if (spil.id == spilId)
                 {
                     spil.antal--;
                     if (spil.antal <= 0)
                     {
-                        indkøbsKurv.Remove(spil);
+                        indkøbsKurv.varer.Remove(spil);
                         break;
                     }
                 }
             }
         }
         return Redirect(@"Checkout");
+    }
+
+    public IActionResult Receipt()
+    {
+        return View(LoggedInUser);
     }
     
     public IActionResult SearchResult(string searchQuery, string spilKategori)
