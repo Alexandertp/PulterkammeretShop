@@ -97,7 +97,11 @@ namespace PulterkammeretShop.Helpers
             {
                 Directory.CreateDirectory(bestillingFolder);
             }
-            StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length + ".txt");
+            //Først finder vi hvor mange filer der er i en folder som har customer's id som navn. F.eks. en folder med 3 filer i bliver til '3'
+            string bestillingsId = Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length.ToString();
+            StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+ bestillingsId + ".txt");
+            StreamWriter skriver2 = System.IO.File.AppendText(bestillingFolder + "Meta.txt");
+            skriver2.Write($"{bestillingsId}, {bestilling.ordreDato}");
             foreach (Spil spil in bestilling.varer)
             {
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
