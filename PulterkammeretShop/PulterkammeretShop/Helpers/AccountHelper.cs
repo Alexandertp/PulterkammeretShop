@@ -74,6 +74,14 @@ namespace PulterkammeretShop.Helpers
             //Når listen er lavet, returnerer vi den.
             return customerListeTemp;
         }
+
+        public void AddNewCustomer(Customer nyKunde)
+        {
+            StreamWriter skriver = System.IO.File.AppendText("Customers.txt");
+            skriver.Write($"\n{nyKunde.id},{nyKunde.name},{nyKunde.password},{nyKunde.phoneNumber},{nyKunde.address},{nyKunde.paymentInfo}");
+            skriver.Close();
+            ListeMedAlleCustomers.Add(nyKunde);
+        }
         
         /// <summary>
         /// Skriver en ordre til en ny fil i en mappe på computeren, hvis mappen ikke allerede eksisterer, skaber den en
@@ -82,7 +90,7 @@ namespace PulterkammeretShop.Helpers
         /// </summary>
         /// <param name="customer"></param>
         /// <param name="bestilling"></param>
-        public void AddOrderToCustomerDirectory(Customer customer, List<Spil> bestilling)
+        public void AddOrderToCustomerDirectory(Customer customer, Ordre bestilling)
         {
             string bestillingFolder = bestillingPath + customer.id.ToString() + "/";
             if (!Directory.Exists(bestillingFolder))
@@ -90,7 +98,7 @@ namespace PulterkammeretShop.Helpers
                 Directory.CreateDirectory(bestillingFolder);
             }
             StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length + ".txt");
-            foreach (Spil spil in bestilling)
+            foreach (Spil spil in bestilling.varer)
             {
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
             }
