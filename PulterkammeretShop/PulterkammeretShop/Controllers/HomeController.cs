@@ -163,8 +163,7 @@ public class HomeController : Controller
 
     public IActionResult AddMoreToIndkøbskurv(int spilId)
     {
-        katalog = new Katalog();
-        List<Spil> SpilListe = katalog.HentSpilFraFil();
+        
         if (indkøbsKurv.Exists(spil => spil.id == spilId))
         {
             foreach (Spil spil in indkøbsKurv)
@@ -180,8 +179,6 @@ public class HomeController : Controller
 
     public IActionResult AddLessToIndkøbskurv(int spilId)
     {
-        katalog = new Katalog();
-        List<Spil> SpilListe = katalog.HentSpilFraFil();
         if (indkøbsKurv.Exists(spil => spil.id == spilId))
         {
             foreach (Spil spil in indkøbsKurv)
@@ -192,6 +189,7 @@ public class HomeController : Controller
                     if (spil.antal <= 0)
                     {
                         indkøbsKurv.Remove(spil);
+                        break;
                     }
                 }
             }
