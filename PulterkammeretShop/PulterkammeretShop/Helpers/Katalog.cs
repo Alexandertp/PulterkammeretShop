@@ -28,7 +28,7 @@ namespace PulterkammeretShop.Helpers
                 string[] splitArr = spil.Split(',');
                 int newId = Convert.ToInt32(splitArr[0]);
                 string newNavn = splitArr[1];
-                double newPris = Convert.ToDouble(splitArr[2]);
+                int newPris = Convert.ToInt32(splitArr[2]);
                 string newKategori = splitArr[3];
                 produktListeTemp.Add(new Spil(newId, newNavn, newPris, newKategori));
             }
