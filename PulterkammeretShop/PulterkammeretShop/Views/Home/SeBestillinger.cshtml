@@ -27,11 +27,11 @@ else
     <div>
         @foreach (Ordre ordre in Model)
         {
-            <h2>Bestilling</h2>
+            <h2>Bestilling d. @ordre.ordreDato</h2>
             foreach (Spil spil in ordre.varer)
             {
                 <div class="spil">
-                    <img src="~/images/Frontbilleder/@(spil.navn).jpeg" alt="Billede Kommer Snart" style="width:100%; height:auto;" />
+                    <img src="~/images/Frontbilleder/@(spil.navn).jpeg" alt="Billede Kommer Snart" style="width:100%; height:auto;"/>
                     <h4 style="font-weight: bolder">@spil.navn</h4>
                     <h6 style="font-weight: bold">@spil.pris DKK</h6>
                     <h6>@spil.antal stk.</h6>
