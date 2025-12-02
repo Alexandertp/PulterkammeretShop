@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Checkout";
 }
-@model List<Spil>
+@model Ordre
 
 <style>
     .spilIKurv {
@@ -21,66 +21,66 @@
 
 <div class="indkøbsVogn">
     <div class="column">
-    <h2 style="font-weight: bold;">Indkøbskurv</h2>
-    <div class="Kurv">
-        @if (Model != null)
-        {
-            double totalPris = 0;
-            @foreach (Spil spil in Model)
+        <h2 style="font-weight: bold;">Indkøbskurv</h2>
+        <div class="Kurv">
+            @if (Model != null)
             {
-                totalPris += spil.pris * spil.antal;
+                double totalPris = 0;
+                @foreach (Spil spil in Model.varer)
+                {
+                    totalPris += spil.pris * spil.antal;
 
-                <div class="spilIKurv">
-                    <img src="~/images/Frontbilleder/@(spil.navn).jpeg" alt="Billede Kommer Snart" style="width:100%; height:auto;" />
-                    <h4 style="font-weight: bolder">@spil.navn</h4>
-                    <h6 style="font-weight: bold">@spil.pris DKK pr. spil</h6><br/>
-                    <h6>@spil.antal spil i kurven</h6>
-                    <div style="display:flex; gap:10px;">
-                        <form method="POST" asp-action="AddLessToIndkøbskurv">
-                            <input type="hidden" name="spilId" value="@spil.id">
-                            <button class="button-style">Fjern</button>
-                        </form>
-                        <form method="POST" asp-action="AddMoreToIndkøbskurv">
-                            <input type="hidden" name="spilId" value="@spil.id">
-                            <button class="button-style">Tilføj</button>
-                        </form>
+                    <div class="spilIKurv">
+                        <img src="~/images/Frontbilleder/@(spil.navn).jpeg" alt="Billede Kommer Snart" style="width:100%; height:auto;" />
+                        <h4 style="font-weight: bolder">@spil.navn</h4>
+                        <h6 style="font-weight: bold">@spil.pris DKK pr. spil</h6><br/>
+                        <h6>@spil.antal spil i kurven</h6>
+                        <div style="display:flex; gap:10px;">
+                            <form method="POST" asp-action="RemoveFromIndkøbskurv">
+                                <input type="hidden" name="spilId" value="@spil.id">
+                                <button class="button-style">Fjern</button>
+                            </form>
+                            <form method="POST" asp-action="AddMoreToIndkøbskurv">
+                                <input type="hidden" name="spilId" value="@spil.id">
+                                <button class="button-style">Tilføj</button>
+                            </form>
 
+                        </div>
                     </div>
+                }
+
+                <div>
+                    <br/>
+                    <h5 style="font-weight: bold; text-decoration: underline;">Pris i alt: @totalPris DKK</h5>
+                    <br/>
                 </div>
             }
-
-            <div>
-                <br/>
-                <h5 style="font-weight: bold; text-decoration: underline;">Pris i alt: @totalPris DKK</h5>
-                <br/>
-            </div>
-        }
-    </div>
+        </div>
     </div>
 
 
-<div class="column">
-    <h2 style="font-weight: bold;">Dine oplysninger</h2>
-    <form method="POST" asp-action="LogCustomer">
-        <h6 style="font-weight: bold">Brugernavn</h6>
-        <input class="input-style" type="text" name="customerUserName" required="true"/>
-        <h6 style="font-weight: bold">Adgangskode</h6>
-        <input class="input-style" type="text" name="customerPassword" required="true"/>
-        <h6 style="font-weight: bold">Mobilnummer</h6>
-        <input class="input-style" type="number" name="customerPhoneNumber" required="true"/>
-        <h6 style="font-weight: bold">Adresse</h6>
-        <input class="input-style" type="text" name="customerAddress" required="true"/>
-        <h6 style="font-weight: bold">Betalingsmetode</h6>
-        <select class="dropdown" name="customerPaymentMethod" required="true">
-            <option>Mastercard</option>
-            <option>Dankort</option>
-            <option>MobilePay</option>
-            <option>PayPal</option>
-        </select>
-        <br>
-        <button class="button-style">
-            Køb
-        </button>
-    </form>
-</div>
+    <div class="column">
+        <h2 style="font-weight: bold;">Dine oplysninger</h2>
+        <form method="POST" asp-action="AfslutBestilling">
+            <h6 style="font-weight: bold">Brugernavn</h6>
+            <input class="input-style" type="text" name="customerUserName" required="true"/>
+            <h6 style="font-weight: bold">Adgangskode</h6>
+            <input class="input-style" type="text" name="customerPassword" required="true"/>
+            <h6 style="font-weight: bold">Mobilnummer</h6>
+            <input class="input-style" type="number" name="customerPhoneNumber" required="true"/>
+            <h6 style="font-weight: bold">Adresse</h6>
+            <input class="input-style" type="text" name="customerAddress" required="true"/>
+            <h6 style="font-weight: bold">Betalingsmetode</h6>
+            <select class="dropdown" name="customerPaymentMethod" required="true">
+                <option>Mastercard</option>
+                <option>Dankort</option>
+                <option>MobilePay</option>
+                <option>PayPal</option>
+            </select>
+            <br>
+            <button class="button-style">
+                Køb
+            </button>
+        </form>
+    </div>
 </div>
