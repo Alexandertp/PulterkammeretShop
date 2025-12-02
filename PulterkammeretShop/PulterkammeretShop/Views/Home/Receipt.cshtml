@@ -16,35 +16,38 @@
     }
 </style>
 
-<div class="column">
-    @if (Model != null)
-    {
-        <h4 style="font-weight: bolder">Tak for dit køb!</h4>
-        <p>Din bestilling er modtaget d. @Model.ordre.Last().ordreDato</p>
-        @foreach (Spil spil in Model.ordre.Last().varer)
+<div class="kvittering">
+    <div class="column">
+        @if (Model != null)
         {
-            Model.ordre.Last().totalPris += spil.pris * spil.antal;
-            <div class="spil">
-                <img src="~/images/Frontbilleder/@(spil.navn).jpeg" alt="Billede Kommer Snart"
-                     style="width:100%; height:auto;"/>
-                <h4 style="font-weight: bolder">@spil.navn</h4>
-                <h6 style="font-weight: bold">@spil.pris DKK</h6>
-                <h6>@spil.antal stk.</h6>
-                <h6>@spil.kategori</h6>
+            <h4 style="font-weight: bolder">Tak for dit køb!</h4>
+            <p>Din bestilling er modtaget d. @Model.ordre.Last().ordreDato</p>
+            @foreach (Spil spil in Model.ordre.Last().varer)
+            {
+                Model.ordre.Last().totalPris += spil.pris * spil.antal;
+                <div class="spil">
+                    <img src="~/images/Frontbilleder/@(spil.navn).jpeg" alt="Billede Kommer Snart"
+                         style="width:100%; height:auto;"/>
+                    <h4 style="font-weight: bolder">@spil.navn</h4>
+                    <h6 style="font-weight: bold">@spil.pris DKK</h6>
+                    <h6>@spil.antal stk.</h6>
+                    <h6>@spil.kategori</h6>
+                </div>
+            }
+
+            <div>
+                <br/>
+                <h5 style="font-weight: bold; text-decoration: underline;">Pris i
+                    alt: @Model.ordre.Last().totalPris DKK</h5>
+                <br/>
             </div>
         }
+    </div>
 
-        <div>
-            <br/>
-            <h5 style="font-weight: bold; text-decoration: underline;">Pris i alt: @Model.ordre.Last().totalPris DKK</h5>
-            <br/>
-        </div>
-    }
-</div>
-
-<div class="column">
-    <h4 style="font-weight: bolder">Kundeinformation</h4>
-    <h6>@Model.name</h6>
-    <h6>@Model.phoneNumber</h6>
-    <h6>@Model.address</h6>
+    <div class="column">
+        <h4 style="font-weight: bolder">Kundeinformation</h4>
+        <h6>@Model.name</h6>
+        <h6>@Model.phoneNumber</h6>
+        <h6>@Model.address</h6>
+    </div>
 </div>
