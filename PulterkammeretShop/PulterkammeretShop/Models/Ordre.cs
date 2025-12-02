@@ -2,10 +2,11 @@ namespace PulterkammeretShop.Models;
 
 public class Ordre
 {
+    private int _totalPris;
     public int totalPris
     {
-        get { return totalPris;} 
-        set {totalPris = value;}
+        get { return _totalPris;} 
+        set {_totalPris = value;}
     }
     
     public string ordreDato = "";
@@ -13,6 +14,7 @@ public class Ordre
     public Ordre()
     {
         ordreDato = DateTime.Now.ToShortDateString();
+        varer = new List<Spil>();
     }
     
     public List<Spil> varer = new List<Spil>();
