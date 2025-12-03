@@ -27,7 +27,7 @@ else
     <div>
         @foreach (Ordre ordre in Model)
         {
-            <h2>Bestilling</h2>
+            <h2>Bestilling @ordre.ordreDato</h2>
             foreach (Spil spil in ordre.varer)
             {
                 <div class="spil">
