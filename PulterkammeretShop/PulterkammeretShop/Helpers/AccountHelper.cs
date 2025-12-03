@@ -98,10 +98,11 @@ namespace PulterkammeretShop.Helpers
                 Directory.CreateDirectory(bestillingFolder);
             }
             //Først finder vi hvor mange filer der er i en folder som har customer's id som navn. F.eks. en folder med 3 filer i bliver til '3'
+            StreamWriter skriver2 = System.IO.File.AppendText(bestillingFolder + "Meta.txt");
             string bestillingsId = Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length.ToString();
             StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+ bestillingsId + ".txt");
-            StreamWriter skriver2 = System.IO.File.AppendText(bestillingFolder + "Meta.txt");
-            skriver2.Write($"{bestillingsId},{bestilling.ordreDato}");
+            bestilling.ordreDato = DateTime.Now.ToShortDateString() +  " " + DateTime.Now.ToLongTimeString();
+            skriver2.Write($"\n{bestillingsId},{bestilling.ordreDato}");
             foreach (Spil spil in bestilling.varer)
             {
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
@@ -138,10 +139,10 @@ namespace PulterkammeretShop.Helpers
             
             
             //Dette loop kører igennem hver dokument inde i den folder som indeholder kundens bestillinger. Hver dokument er sin egen ordre, og indeholder en liste af spil
-            for (int i = 0; i < Directory.GetFiles(customerPath).Length-1; i++) //minus en fordi meta filen er til sidst :)
+            for (int i = 1; i < Directory.GetFiles(customerPath).Length; i++) //minus en fordi meta filen er til sidst :)
             {
                 
-                string[] datoSplitter = bestillingsDatoer[i].Split(",");
+                string[] datoSplitter = bestillingsDatoer[i-1].Split(",");
                 //Læser indholdet af filen, hver punkt i dette array er en linje i dokumentet
                 string[] importTekst = File.ReadAllLines(customerPath + i + ".txt");
                 output.Add(new Ordre());
