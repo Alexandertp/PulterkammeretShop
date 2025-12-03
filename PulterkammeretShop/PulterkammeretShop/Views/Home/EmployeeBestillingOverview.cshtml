@@ -1,0 +1,21 @@
+@using PulterkammeretShop.Controllers
+@model string
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (!HomeController.EmployeeLoggedIn)
+{
+    <form method="POST" asp-action="LoginEmployee">
+        <h6 style="font-weight: bold;">Brugernavn:</h6> 
+        <input class="input-style"type="text" name="employeeUserName"></input>
+        <h6 style="font-weight: bold;">Adgangskode:</h6> 
+        <input class="input-style" type="text" name="employeePassword"></input><br/>
+        <button class="button-style">Log in</button>
+    </form>
+}
+else
+{
+    @Html.Raw(Model)
+}

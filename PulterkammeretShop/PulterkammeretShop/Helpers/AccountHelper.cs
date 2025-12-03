@@ -162,7 +162,14 @@ namespace PulterkammeretShop.Helpers
             }
             return output;
         }
-
+        /// <summary>
+        /// Tager et string array og en liste af alle spil og outputter en liste af spil ved at læse fra en fil
+        ///
+        /// Skrevert af Alexander
+        /// </summary>
+        /// <param name="customerOrders"></param>
+        /// <param name="fullSpilListe"></param>
+        /// <returns></returns>
         private List<Spil> SpilFraStringArray(string[] customerOrders, List<Spil> fullSpilListe)
         {
             List<Spil> SpilListe = new List<Spil>();
@@ -176,25 +183,34 @@ namespace PulterkammeretShop.Helpers
             }
             return  SpilListe;
         }
-
-        private string EmployeeGetAllBestillinger(List<Customer> alleCustomers)
+        /// <summary>
+        /// Laver en liste af kunder om til en HTML streng til visning i en browser
+        ///
+        /// Skrevert af Alexander & Kasper
+        /// </summary>
+        /// <param name="alleCustomers"></param>
+        /// <returns></returns>
+        public string EmployeeGetAllBestillinger(List<Customer> alleCustomers)
         {
             string output = "";
-            foreach (Customer customer in  alleCustomers)
+            foreach (Customer customer in  alleCustomers) //Dette loop kører en gang per kunde i listen
             {
                 List<Ordre> outputBestillingsListe = ReadCustomerOrders(customer.id);
                 output += "<h2>" + customer.name + "</h2>" + "<br/>";
                 output += "<h3>" + customer.address + customer.paymentInfo + customer.phoneNumber + "</h3>" + "<br/>";
-                foreach (Ordre ordre in outputBestillingsListe)
+                
+                foreach (Ordre ordre in outputBestillingsListe) //Hver kunde kan have mange bestillinger, dette loop kører en gang per bestilling en kunde har
                 {
-                    foreach (Spil spil in ordre.varer)
+                    
+                    foreach (Spil spil in ordre.varer) //Hver bestilling kan have flere spil, dette loop kører en gang for hvert spil
                     {
                         output += spil.navn + " " +  spil.antal + " " + spil.pris + "<br/>";
                     }
+                    
                     output += "<bold>Total Pris: </bold>" + ordre.totalPris + "<br/>";
                 }
             }
-
+            //Returnere en kæmpe liste
             return output;
         }
     }

@@ -132,6 +132,12 @@ public class HomeController : Controller
         return Redirect($"Lager");
     }
 
+    public IActionResult EmployeeBestillingOverview()
+    {
+        AccountHelper accountHelper = new AccountHelper();
+        string heleSiden = accountHelper.EmployeeGetAllBestillinger(accountHelper.listeMedAlleCustomers);
+        return View("EmployeeBestillingOverview",heleSiden);
+    }
     /// <summary>
     /// Skrevet af Alexander
     /// </summary>
