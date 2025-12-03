@@ -6,9 +6,4 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Bestillinger\" />
-      <Folder Include="Bestillinger\1\" />
-    </ItemGroup>
-
 </Project>

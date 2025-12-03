@@ -101,12 +101,13 @@ namespace PulterkammeretShop.Helpers
             string bestillingsId = Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length.ToString();
             StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+ bestillingsId + ".txt");
             StreamWriter skriver2 = System.IO.File.AppendText(bestillingFolder + "Meta.txt");
-            skriver2.Write($"{bestillingsId}, {bestilling.ordreDato}");
+            skriver2.Write($"{bestillingsId},{bestilling.ordreDato}");
             foreach (Spil spil in bestilling.varer)
             {
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
             }
             skriver.Close();
+            skriver2.Close();
         }
         
         //TODO: Abstract function
