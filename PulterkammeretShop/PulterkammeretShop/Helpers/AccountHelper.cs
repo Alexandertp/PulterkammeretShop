@@ -102,7 +102,15 @@ namespace PulterkammeretShop.Helpers
             string bestillingsId = Directory.GetFiles(bestillingFolder,"*", SearchOption.TopDirectoryOnly).Length.ToString();
             StreamWriter skriver = System.IO.File.AppendText(bestillingFolder+ bestillingsId + ".txt");
             bestilling.ordreDato = DateTime.Now.ToShortDateString() +  " " + DateTime.Now.ToLongTimeString();
+            if (File.ReadAllLines(bestillingFolder + "Meta.txt").Length > 0)
+            {
+                
             skriver2.Write($"\n{bestillingsId},{bestilling.ordreDato}");
+            }
+            else
+            {
+                skriver2.Write($"{bestillingsId},{bestilling.ordreDato}");
+            }
             foreach (Spil spil in bestilling.varer)
             {
                 skriver.WriteLine($"{spil.id},{spil.navn},{spil.antal}");
@@ -167,6 +175,27 @@ namespace PulterkammeretShop.Helpers
                 SpilListe.Add(spilFraId);
             }
             return  SpilListe;
+        }
+
+        private string EmployeeGetAllBestillinger(List<Customer> alleCustomers)
+        {
+            string output = "";
+            foreach (Customer customer in  alleCustomers)
+            {
+                List<Ordre> outputBestillingsListe = ReadCustomerOrders(customer.id);
+                output += "<h2>" + customer.name + "</h2>" + "<br/>";
+                output += "<h3>" + customer.address + customer.paymentInfo + customer.phoneNumber + "</h3>" + "<br/>";
+                foreach (Ordre ordre in outputBestillingsListe)
+                {
+                    foreach (Spil spil in ordre.varer)
+                    {
+                        output += spil.navn + " " +  spil.antal + " " + spil.pris + "<br/>";
+                    }
+                    output += "<bold>Total Pris: </bold>" + ordre.totalPris + "<br/>";
+                }
+            }
+
+            return output;
         }
     }
 }
