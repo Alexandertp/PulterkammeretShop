@@ -102,7 +102,6 @@ public class HomeController : Controller
         if (LoggedInUser != null)
         {
             List<Ordre> ordreListe = accountHelper.ReadCustomerOrders(LoggedInUser.id);
-            Debug.WriteLine(LoggedInUser.name);
             return View(ordreListe);
         }
         Debug.WriteLine("Bruger er ikke logget ind");
@@ -128,7 +127,6 @@ public class HomeController : Controller
                 EmployeeLoggedIn = true;
             }
         }
-        Debug.WriteLine("Employee Login er " + EmployeeLoggedIn);
         return Redirect($"Lager");
     }
 
